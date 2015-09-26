@@ -1,0 +1,720 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		7858968519031D53007039AB /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7858968419031D53007039AB /* Foundation.framework */; };
+		7858968A19031D53007039AB /* itachIP2IR.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 7858968919031D53007039AB /* itachIP2IR.h */; };
+		7858968C19031D53007039AB /* itachIP2IR.m in Sources */ = {isa = PBXBuildFile; fileRef = 7858968B19031D53007039AB /* itachIP2IR.m */; };
+		7858969319031D53007039AB /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7858969219031D53007039AB /* XCTest.framework */; };
+		7858969419031D53007039AB /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7858968419031D53007039AB /* Foundation.framework */; };
+		7858969619031D53007039AB /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7858969519031D53007039AB /* UIKit.framework */; };
+		7858969919031D53007039AB /* libitachIP2IR.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 7858968119031D53007039AB /* libitachIP2IR.a */; };
+		7858969F19031D53007039AB /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 7858969D19031D53007039AB /* InfoPlist.strings */; };
+		785896A119031D53007039AB /* itachIP2IRTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 785896A019031D53007039AB /* itachIP2IRTests.m */; };
+		785896C5190343FA007039AB /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7858969219031D53007039AB /* XCTest.framework */; };
+		785896C6190343FA007039AB /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 785896B4190343F9007039AB /* Cocoa.framework */; };
+		785896C9190343FA007039AB /* itachIP2IR_OSx.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 785896B3190343F9007039AB /* itachIP2IR_OSx.dylib */; };
+		785896CF190343FA007039AB /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 785896CD190343FA007039AB /* InfoPlist.strings */; };
+		785896D1190343FA007039AB /* itachIP2IR_OSxTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 785896D0190343FA007039AB /* itachIP2IR_OSxTests.m */; };
+		785896D819034466007039AB /* itachIP2IR.m in Sources */ = {isa = PBXBuildFile; fileRef = 7858968B19031D53007039AB /* itachIP2IR.m */; };
+		785896D919034482007039AB /* itachIP2IR.h in Headers */ = {isa = PBXBuildFile; fileRef = 7858968919031D53007039AB /* itachIP2IR.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		785896DB19034538007039AB /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 785896DA19034538007039AB /* Cocoa.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		7858969719031D53007039AB /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 7858967919031D53007039AB /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 7858968019031D53007039AB;
+			remoteInfo = itachIP2IR;
+		};
+		785896C7190343FA007039AB /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 7858967919031D53007039AB /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 785896B2190343F9007039AB;
+			remoteInfo = itachIP2IR_OSx;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		7858967F19031D53007039AB /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "include/$(PRODUCT_NAME)";
+			dstSubfolderSpec = 16;
+			files = (
+				7858968A19031D53007039AB /* itachIP2IR.h in CopyFiles */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		7858968119031D53007039AB /* libitachIP2IR.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libitachIP2IR.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		7858968419031D53007039AB /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		7858968819031D53007039AB /* itachIP2IR-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "itachIP2IR-Prefix.pch"; sourceTree = "<group>"; };
+		7858968919031D53007039AB /* itachIP2IR.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = itachIP2IR.h; sourceTree = "<group>"; };
+		7858968B19031D53007039AB /* itachIP2IR.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = itachIP2IR.m; sourceTree = "<group>"; };
+		7858969119031D53007039AB /* itachIP2IRTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = itachIP2IRTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		7858969219031D53007039AB /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
+		7858969519031D53007039AB /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = Library/Frameworks/UIKit.framework; sourceTree = DEVELOPER_DIR; };
+		7858969C19031D53007039AB /* itachIP2IRTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "itachIP2IRTests-Info.plist"; sourceTree = "<group>"; };
+		7858969E19031D53007039AB /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		785896A019031D53007039AB /* itachIP2IRTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = itachIP2IRTests.m; sourceTree = "<group>"; };
+		785896B3190343F9007039AB /* itachIP2IR_OSx.dylib */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.dylib"; includeInIndex = 0; path = itachIP2IR_OSx.dylib; sourceTree = BUILT_PRODUCTS_DIR; };
+		785896B4190343F9007039AB /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = Library/Frameworks/Cocoa.framework; sourceTree = DEVELOPER_DIR; };
+		785896B7190343FA007039AB /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		785896B8190343FA007039AB /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+		785896B9190343FA007039AB /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
+		785896BC190343FA007039AB /* itachIP2IR_OSx-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "itachIP2IR_OSx-Prefix.pch"; sourceTree = "<group>"; };
+		785896C4190343FA007039AB /* itachIP2IR_OSxTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = itachIP2IR_OSxTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		785896CC190343FA007039AB /* itachIP2IR_OSxTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "itachIP2IR_OSxTests-Info.plist"; sourceTree = "<group>"; };
+		785896CE190343FA007039AB /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		785896D0190343FA007039AB /* itachIP2IR_OSxTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = itachIP2IR_OSxTests.m; sourceTree = "<group>"; };
+		785896DA19034538007039AB /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.8.sdk/System/Library/Frameworks/Cocoa.framework; sourceTree = DEVELOPER_DIR; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		7858967E19031D53007039AB /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7858968519031D53007039AB /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		7858968E19031D53007039AB /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7858969919031D53007039AB /* libitachIP2IR.a in Frameworks */,
+				7858969319031D53007039AB /* XCTest.framework in Frameworks */,
+				7858969619031D53007039AB /* UIKit.framework in Frameworks */,
+				7858969419031D53007039AB /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		785896B0190343F9007039AB /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				785896DB19034538007039AB /* Cocoa.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		785896C1190343FA007039AB /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				785896C6190343FA007039AB /* Cocoa.framework in Frameworks */,
+				785896C9190343FA007039AB /* itachIP2IR_OSx.dylib in Frameworks */,
+				785896C5190343FA007039AB /* XCTest.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		7858967819031D53007039AB = {
+			isa = PBXGroup;
+			children = (
+				7858968619031D53007039AB /* itachIP2IR */,
+				7858969A19031D53007039AB /* itachIP2IRTests */,
+				785896BA190343FA007039AB /* itachIP2IR_OSx */,
+				785896CA190343FA007039AB /* itachIP2IR_OSxTests */,
+				7858968319031D53007039AB /* Frameworks */,
+				7858968219031D53007039AB /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		7858968219031D53007039AB /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				7858968119031D53007039AB /* libitachIP2IR.a */,
+				7858969119031D53007039AB /* itachIP2IRTests.xctest */,
+				785896B3190343F9007039AB /* itachIP2IR_OSx.dylib */,
+				785896C4190343FA007039AB /* itachIP2IR_OSxTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		7858968319031D53007039AB /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				785896DA19034538007039AB /* Cocoa.framework */,
+				7858968419031D53007039AB /* Foundation.framework */,
+				7858969219031D53007039AB /* XCTest.framework */,
+				7858969519031D53007039AB /* UIKit.framework */,
+				785896B4190343F9007039AB /* Cocoa.framework */,
+				785896B6190343FA007039AB /* Other Frameworks */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		7858968619031D53007039AB /* itachIP2IR */ = {
+			isa = PBXGroup;
+			children = (
+				7858968919031D53007039AB /* itachIP2IR.h */,
+				7858968B19031D53007039AB /* itachIP2IR.m */,
+				7858968719031D53007039AB /* Supporting Files */,
+			);
+			path = itachIP2IR;
+			sourceTree = "<group>";
+		};
+		7858968719031D53007039AB /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				7858968819031D53007039AB /* itachIP2IR-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		7858969A19031D53007039AB /* itachIP2IRTests */ = {
+			isa = PBXGroup;
+			children = (
+				785896A019031D53007039AB /* itachIP2IRTests.m */,
+				7858969B19031D53007039AB /* Supporting Files */,
+			);
+			path = itachIP2IRTests;
+			sourceTree = "<group>";
+		};
+		7858969B19031D53007039AB /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				7858969C19031D53007039AB /* itachIP2IRTests-Info.plist */,
+				7858969D19031D53007039AB /* InfoPlist.strings */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		785896B6190343FA007039AB /* Other Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				785896B7190343FA007039AB /* Foundation.framework */,
+				785896B8190343FA007039AB /* CoreData.framework */,
+				785896B9190343FA007039AB /* AppKit.framework */,
+			);
+			name = "Other Frameworks";
+			sourceTree = "<group>";
+		};
+		785896BA190343FA007039AB /* itachIP2IR_OSx */ = {
+			isa = PBXGroup;
+			children = (
+				785896BB190343FA007039AB /* Supporting Files */,
+			);
+			path = itachIP2IR_OSx;
+			sourceTree = "<group>";
+		};
+		785896BB190343FA007039AB /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				785896BC190343FA007039AB /* itachIP2IR_OSx-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		785896CA190343FA007039AB /* itachIP2IR_OSxTests */ = {
+			isa = PBXGroup;
+			children = (
+				785896D0190343FA007039AB /* itachIP2IR_OSxTests.m */,
+				785896CB190343FA007039AB /* Supporting Files */,
+			);
+			path = itachIP2IR_OSxTests;
+			sourceTree = "<group>";
+		};
+		785896CB190343FA007039AB /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				785896CC190343FA007039AB /* itachIP2IR_OSxTests-Info.plist */,
+				785896CD190343FA007039AB /* InfoPlist.strings */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		785896B1190343F9007039AB /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				785896D919034482007039AB /* itachIP2IR.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
+/* Begin PBXNativeTarget section */
+		7858968019031D53007039AB /* itachIP2IR */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 785896A419031D53007039AB /* Build configuration list for PBXNativeTarget "itachIP2IR" */;
+			buildPhases = (
+				7858967D19031D53007039AB /* Sources */,
+				7858967E19031D53007039AB /* Frameworks */,
+				7858967F19031D53007039AB /* CopyFiles */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = itachIP2IR;
+			productName = itachIP2IR;
+			productReference = 7858968119031D53007039AB /* libitachIP2IR.a */;
+			productType = "com.apple.product-type.library.static";
+		};
+		7858969019031D53007039AB /* itachIP2IRTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 785896A719031D53007039AB /* Build configuration list for PBXNativeTarget "itachIP2IRTests" */;
+			buildPhases = (
+				7858968D19031D53007039AB /* Sources */,
+				7858968E19031D53007039AB /* Frameworks */,
+				7858968F19031D53007039AB /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				7858969819031D53007039AB /* PBXTargetDependency */,
+			);
+			name = itachIP2IRTests;
+			productName = itachIP2IRTests;
+			productReference = 7858969119031D53007039AB /* itachIP2IRTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		785896B2190343F9007039AB /* itachIP2IR_OSx */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 785896D2190343FA007039AB /* Build configuration list for PBXNativeTarget "itachIP2IR_OSx" */;
+			buildPhases = (
+				785896AF190343F9007039AB /* Sources */,
+				785896B0190343F9007039AB /* Frameworks */,
+				785896B1190343F9007039AB /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = itachIP2IR_OSx;
+			productName = itachIP2IR_OSx;
+			productReference = 785896B3190343F9007039AB /* itachIP2IR_OSx.dylib */;
+			productType = "com.apple.product-type.library.dynamic";
+		};
+		785896C3190343FA007039AB /* itachIP2IR_OSxTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 785896D5190343FA007039AB /* Build configuration list for PBXNativeTarget "itachIP2IR_OSxTests" */;
+			buildPhases = (
+				785896C0190343FA007039AB /* Sources */,
+				785896C1190343FA007039AB /* Frameworks */,
+				785896C2190343FA007039AB /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				785896C8190343FA007039AB /* PBXTargetDependency */,
+			);
+			name = itachIP2IR_OSxTests;
+			productName = itachIP2IR_OSxTests;
+			productReference = 785896C4190343FA007039AB /* itachIP2IR_OSxTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		7858967919031D53007039AB /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0500;
+				ORGANIZATIONNAME = colossus;
+				TargetAttributes = {
+					7858969019031D53007039AB = {
+						TestTargetID = 785896B2190343F9007039AB;
+					};
+					785896C3190343FA007039AB = {
+						TestTargetID = 785896B2190343F9007039AB;
+					};
+				};
+			};
+			buildConfigurationList = 7858967C19031D53007039AB /* Build configuration list for PBXProject "itachIP2IR" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 7858967819031D53007039AB;
+			productRefGroup = 7858968219031D53007039AB /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				7858968019031D53007039AB /* itachIP2IR */,
+				7858969019031D53007039AB /* itachIP2IRTests */,
+				785896B2190343F9007039AB /* itachIP2IR_OSx */,
+				785896C3190343FA007039AB /* itachIP2IR_OSxTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		7858968F19031D53007039AB /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7858969F19031D53007039AB /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		785896C2190343FA007039AB /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				785896CF190343FA007039AB /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		7858967D19031D53007039AB /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7858968C19031D53007039AB /* itachIP2IR.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		7858968D19031D53007039AB /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				785896A119031D53007039AB /* itachIP2IRTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		785896AF190343F9007039AB /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				785896D819034466007039AB /* itachIP2IR.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		785896C0190343FA007039AB /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				785896D1190343FA007039AB /* itachIP2IR_OSxTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		7858969819031D53007039AB /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 7858968019031D53007039AB /* itachIP2IR */;
+			targetProxy = 7858969719031D53007039AB /* PBXContainerItemProxy */;
+		};
+		785896C8190343FA007039AB /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 785896B2190343F9007039AB /* itachIP2IR_OSx */;
+			targetProxy = 785896C7190343FA007039AB /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		7858969D19031D53007039AB /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				7858969E19031D53007039AB /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		785896CD190343FA007039AB /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				785896CE190343FA007039AB /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		785896A219031D53007039AB /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		785896A319031D53007039AB /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		785896A519031D53007039AB /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				DSTROOT = /tmp/itachIP2IR.dst;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "itachIP2IR/itachIP2IR-Prefix.pch";
+				OTHER_LDFLAGS = "-ObjC";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+			};
+			name = Debug;
+		};
+		785896A619031D53007039AB /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				DSTROOT = /tmp/itachIP2IR.dst;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "itachIP2IR/itachIP2IR-Prefix.pch";
+				OTHER_LDFLAGS = "-ObjC";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+			};
+			name = Release;
+		};
+		785896A819031D53007039AB /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/itachIP2IR_OSx.dylib";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "itachIP2IR/itachIP2IR-Prefix.pch";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = "itachIP2IRTests/itachIP2IRTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Debug;
+		};
+		785896A919031D53007039AB /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/itachIP2IR_OSx.dylib";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "itachIP2IR/itachIP2IR-Prefix.pch";
+				INFOPLIST_FILE = "itachIP2IRTests/itachIP2IRTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Release;
+		};
+		785896D3190343FA007039AB /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "itachIP2IR_OSx/itachIP2IR_OSx-Prefix.pch";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 10.8;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+			};
+			name = Debug;
+		};
+		785896D4190343FA007039AB /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "itachIP2IR_OSx/itachIP2IR_OSx-Prefix.pch";
+				MACOSX_DEPLOYMENT_TARGET = 10.8;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+			};
+			name = Release;
+		};
+		785896D6190343FA007039AB /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/itachIP2IR_OSx.dylib";
+				COMBINE_HIDPI_IMAGES = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+					"$(inherited)",
+				);
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "itachIP2IR_OSx/itachIP2IR_OSx-Prefix.pch";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = "itachIP2IR_OSxTests/itachIP2IR_OSxTests-Info.plist";
+				MACOSX_DEPLOYMENT_TARGET = 10.8;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Debug;
+		};
+		785896D7190343FA007039AB /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/itachIP2IR_OSx.dylib";
+				COMBINE_HIDPI_IMAGES = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+					"$(inherited)",
+				);
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "itachIP2IR_OSx/itachIP2IR_OSx-Prefix.pch";
+				INFOPLIST_FILE = "itachIP2IR_OSxTests/itachIP2IR_OSxTests-Info.plist";
+				MACOSX_DEPLOYMENT_TARGET = 10.8;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		7858967C19031D53007039AB /* Build configuration list for PBXProject "itachIP2IR" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				785896A219031D53007039AB /* Debug */,
+				785896A319031D53007039AB /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		785896A419031D53007039AB /* Build configuration list for PBXNativeTarget "itachIP2IR" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				785896A519031D53007039AB /* Debug */,
+				785896A619031D53007039AB /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		785896A719031D53007039AB /* Build configuration list for PBXNativeTarget "itachIP2IRTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				785896A819031D53007039AB /* Debug */,
+				785896A919031D53007039AB /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		785896D2190343FA007039AB /* Build configuration list for PBXNativeTarget "itachIP2IR_OSx" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				785896D3190343FA007039AB /* Debug */,
+				785896D4190343FA007039AB /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		785896D5190343FA007039AB /* Build configuration list for PBXNativeTarget "itachIP2IR_OSxTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				785896D6190343FA007039AB /* Debug */,
+				785896D7190343FA007039AB /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 7858967919031D53007039AB /* Project object */;
+}
