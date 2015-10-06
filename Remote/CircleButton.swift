@@ -70,9 +70,8 @@ class CircleButton: UIControl {
       animations: {
         circle.alpha = 0.0
       }) { (bool) -> Void in
+        circle.removeFromSuperview()
     }
-    
-
   }
 }
 
