@@ -12,12 +12,14 @@ class CircleButton: UIControl {
   
   var imageView: UIImageView!
   var key: String = ""
+  var mainColor: UIColor = UIColor.whiteColor()
 
   init(frame: CGRect, key: String, color: UIColor, image: UIImage?) {
     super.init(frame: frame)
     
+    self.mainColor = color
     self.key = key
-    self.backgroundColor = color
+    self.backgroundColor = self.mainColor
     self.layer.cornerRadius = frame.size.width / 2
     
     imageView = UIImageView(image: image)
@@ -31,7 +33,17 @@ class CircleButton: UIControl {
   
   override var highlighted: Bool {
     didSet {
-      alpha = highlighted ? 0.6 : 1.0
+      if highlighted {
+        var hue:CGFloat = 0
+        var saturation:CGFloat = 0
+        var brightness:CGFloat = 0
+        var alpha:CGFloat = 0
+        
+        mainColor.getHue(&hue, saturation: &saturation, brightness: &brightness, alpha: &alpha)
+        self.backgroundColor = UIColor(hue: hue, saturation: min(1, saturation * 1.1), brightness: min(1, brightness * 1.3), alpha: alpha)
+      } else {
+        self.backgroundColor = self.mainColor
+      }
     }
   }
 }

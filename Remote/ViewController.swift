@@ -12,11 +12,6 @@ class ViewController: UIViewController, UIGestureRecognizerDelegate {
   
   private let commands:[String:[IRCommand]]!
   private let sender:IRSender!
-  private var volumeDelta:Double = 0
-  private var fullVolumeDelta:Double = 0
-  private var volumeView:VolumeView = VolumeView()
-  private var volumeLabel:UILabel = UILabel()
-  private var topArrow:UIImageView = UIImageView()
   
   override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: NSBundle?) {
     self.sender = IRSender()
@@ -25,6 +20,7 @@ class ViewController: UIViewController, UIGestureRecognizerDelegate {
     self.commands["power_on"] = [
       IRCommand(channel: 1, cmd: "38000,1,69,341,172,21,21,21,65,21,65,21,65,21,21,21,65,21,65,21,65,21,65,21,65,21,65,21,21,21,21,21,21,21,21,21,65,21,65,21,65,21,21,21,21,21,21,21,21,21,21,21,21,21,65,21,65,21,21,21,21,21,21,21,65,21,21,21,21,21,1508,341,85,21,3648"),
       IRCommand(channel: 2, cmd: "38000,1,69,341,170,21,21,21,21,21,21,21,21,21,21,21,21,21,21,21,64,21,21,21,21,21,21,21,21,21,64,21,64,21,64,21,21,21,21,21,21,21,21,21,21,21,21,21,21,21,64,21,64,21,64,21,64,21,64,21,64,21,64,21,64,21,21,21,21,21,1517,341,85,21,3655"),
+      IRCommand(channel: 3, cmd: "40064,1,1,95,24,25,24,48,24,48,24,48,24,25,24,48,24,25,24,48,24,25,24,25,24,25,24,25,1014,95,24,25,24,48,24,48,24,48,24,25,24,48,24,25,24,48,24,25,24,25,24,25,24,25,1014,95,24,25,24,48,24,48,24,48,24,25,24,48,24,25,24,48,24,25,24,25,24,25,24,25,24"),
       IRCommand(channel: 3, cmd: "40064,1,1,95,24,25,24,48,24,48,24,48,24,25,24,48,24,25,24,48,24,25,24,25,24,25,24,25,1014,95,24,25,24,48,24,48,24,48,24,25,24,48,24,25,24,48,24,25,24,25,24,25,24,25,1014,95,24,25,24,48,24,48,24,48,24,25,24,48,24,25,24,48,24,25,24,25,24,25,24,25,24")
     ]
     self.commands["power_off"] = [
@@ -59,7 +55,7 @@ class ViewController: UIViewController, UIGestureRecognizerDelegate {
     self.view.backgroundColor = UIColor.blackColor()
     
     let centerX = self.view.bounds.width / 2
-    let marginX = round(centerX / 1.7)
+    let marginX = centerX - 20 - 76
     
     let centerY = self.view.bounds.height / 2
     let startY = centerY - 76 / 2 - 60 - 76
@@ -118,52 +114,17 @@ class ViewController: UIViewController, UIGestureRecognizerDelegate {
     volume_up.addTarget(self, action: "handleButton:", forControlEvents: UIControlEvents.TouchUpInside);
     self.view.addSubview(volume_up)
   }
-
   
   func handleButton(button:CircleButton) {
     sendCommand(button.key)
   }
   
-  func handleVolume(recognizer:CircularGestureRecognizer) {
-    volumeView.startAngle = recognizer.startAngle + CGFloat(Double(M_PI))
-    volumeView.endAngle = recognizer.currentAngle + CGFloat(Double(M_PI))
-    volumeView.setNeedsDisplay()
-    
-    if recognizer.state == UIGestureRecognizerState.Began {
-      fullVolumeDelta = 0
-    }
-    else if recognizer.state == UIGestureRecognizerState.Changed {
-      volumeDelta += Double(recognizer.rotationDelta)
-      fullVolumeDelta += Double(recognizer.rotationDelta)
-      while(volumeDelta >= 1) {
-        sendCommand("Volume Up")
-        volumeDelta -= 1
-      }
-      while(volumeDelta < -1) {
-        sendCommand("Volume Down")
-        volumeDelta += 1
-      }
-      volumeLabel.text = NSString(format: "%i", NSNumber(double: fullVolumeDelta).integerValue) as String
-    }
-    else if recognizer.state == UIGestureRecognizerState.Ended {
-      volumeLabel.text = ""
-    }
-  }
-  
-  func handlePan(recognizer:PanFromCenterGestureRecognizer) {
-    if recognizer.state == UIGestureRecognizerState.Began {
-      print("began")
-    }
-    else if recognizer.state == UIGestureRecognizerState.Changed {
-      
-    }
-    else if recognizer.state == UIGestureRecognizerState.Ended {
-      print("ended")
-    }
-  }
-  
   func reconnect() {
     self.sender.connect("10.0.0.18")
+  }
+  
+  override func prefersStatusBarHidden() -> Bool {
+    return true
   }
   
   private func sendCommand(key:String) {

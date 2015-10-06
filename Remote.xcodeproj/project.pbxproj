@@ -8,9 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		4C3902CB1BC3891B0005FF42 /* CircleButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C3902CA1BC3891B0005FF42 /* CircleButton.swift */; settings = {ASSET_TAGS = (); }; };
-		4CCDC14B1B73214F00E07F43 /* CircularGestureRecognizer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CCDC14A1B73214F00E07F43 /* CircularGestureRecognizer.swift */; };
-		4CCDC1501B732B7E00E07F43 /* VolumeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CCDC14F1B732B7E00E07F43 /* VolumeView.swift */; };
-		4CCDC1521B7332B900E07F43 /* PanFromCenterGestureRecognizer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CCDC1511B7332B900E07F43 /* PanFromCenterGestureRecognizer.swift */; };
 		4CE8A90D1B672FE3005E7566 /* IRSender.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CE8A90C1B672FE3005E7566 /* IRSender.swift */; };
 		4CE8A9101B6748EE005E7566 /* IRCommand.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CE8A90F1B6748EE005E7566 /* IRCommand.swift */; };
 		4CF58D871B6466DA004D3E5E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CF58D861B6466DA004D3E5E /* AppDelegate.swift */; };
@@ -70,9 +67,6 @@
 
 /* Begin PBXFileReference section */
 		4C3902CA1BC3891B0005FF42 /* CircleButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CircleButton.swift; sourceTree = "<group>"; };
-		4CCDC14A1B73214F00E07F43 /* CircularGestureRecognizer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CircularGestureRecognizer.swift; sourceTree = "<group>"; };
-		4CCDC14F1B732B7E00E07F43 /* VolumeView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VolumeView.swift; sourceTree = "<group>"; };
-		4CCDC1511B7332B900E07F43 /* PanFromCenterGestureRecognizer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PanFromCenterGestureRecognizer.swift; sourceTree = "<group>"; };
 		4CE8A90C1B672FE3005E7566 /* IRSender.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IRSender.swift; sourceTree = "<group>"; };
 		4CE8A90F1B6748EE005E7566 /* IRCommand.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IRCommand.swift; sourceTree = "<group>"; };
 		4CF58D811B6466DA004D3E5E /* Remote.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Remote.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -136,9 +130,6 @@
 				4CE8A90C1B672FE3005E7566 /* IRSender.swift */,
 				4CE8A90F1B6748EE005E7566 /* IRCommand.swift */,
 				4C3902CA1BC3891B0005FF42 /* CircleButton.swift */,
-				4CCDC14A1B73214F00E07F43 /* CircularGestureRecognizer.swift */,
-				4CCDC1511B7332B900E07F43 /* PanFromCenterGestureRecognizer.swift */,
-				4CCDC14F1B732B7E00E07F43 /* VolumeView.swift */,
 				4CF58D8D1B6466DA004D3E5E /* Images.xcassets */,
 				4CF58DDF1B64B725004D3E5E /* Vendor */,
 				4CF58D841B6466DA004D3E5E /* Supporting Files */,
@@ -345,14 +336,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4CCDC1501B732B7E00E07F43 /* VolumeView.swift in Sources */,
 				4CE8A9101B6748EE005E7566 /* IRCommand.swift in Sources */,
-				4CCDC1521B7332B900E07F43 /* PanFromCenterGestureRecognizer.swift in Sources */,
 				4C3902CB1BC3891B0005FF42 /* CircleButton.swift in Sources */,
 				4CF58D891B6466DA004D3E5E /* ViewController.swift in Sources */,
 				4CE8A90D1B672FE3005E7566 /* IRSender.swift in Sources */,
 				4CF58DE31B64B731004D3E5E /* DPCircularGestureRecognizer.m in Sources */,
-				4CCDC14B1B73214F00E07F43 /* CircularGestureRecognizer.swift in Sources */,
 				4CF58D871B6466DA004D3E5E /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
