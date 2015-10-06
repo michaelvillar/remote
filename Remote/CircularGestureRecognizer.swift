@@ -18,7 +18,7 @@ class CircularGestureRecognizer: UIGestureRecognizer {
   var startAngle:CGFloat = 0
   var currentAngle:CGFloat = 0
   
-  override func touchesBegan(touches: Set<NSObject>!, withEvent event: UIEvent!) {
+  override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent) {
     super.touchesBegan(touches, withEvent: event)
 
     if touches.count > 1 {
@@ -26,14 +26,14 @@ class CircularGestureRecognizer: UIGestureRecognizer {
       return
     }
     
-    if let touch:UITouch = touches.first as? UITouch {
+    if let touch:UITouch = touches.first {
       let point = touch.locationInView(self.view)
       self.startAngle = self.angleBetweenPoints(a: point, b:center)
       self.currentAngle = self.startAngle
     }
   }
   
-  override func touchesMoved(touches: Set<NSObject>!, withEvent event: UIEvent!) {
+  override func touchesMoved(touches: Set<UITouch>, withEvent event: UIEvent) {
     super.touchesMoved(touches, withEvent: event)
     
     if self.state == UIGestureRecognizerState.Possible {
@@ -42,7 +42,7 @@ class CircularGestureRecognizer: UIGestureRecognizer {
       self.state = UIGestureRecognizerState.Changed
     }
     
-    if let touch:UITouch = touches.first as? UITouch {
+    if let touch:UITouch = touches.first {
       let lastPoint = touch.previousLocationInView(self.view)
       let newPoint = touch.locationInView(self.view)
       
@@ -64,7 +64,7 @@ class CircularGestureRecognizer: UIGestureRecognizer {
     }
   }
   
-  override func touchesEnded(touches: Set<NSObject>!, withEvent event: UIEvent!) {
+  override func touchesEnded(touches: Set<UITouch>, withEvent event: UIEvent) {
     super.touchesEnded(touches, withEvent: event)
     
     self.rotation = 0
@@ -79,11 +79,11 @@ class CircularGestureRecognizer: UIGestureRecognizer {
     }
   }
   
-  override func touchesCancelled(touches: Set<NSObject>!, withEvent event: UIEvent!) {
+  override func touchesCancelled(touches: Set<UITouch>, withEvent event: UIEvent) {
     super.touchesCancelled(touches, withEvent: event)
   }
   
-  private func angleBetweenPoints(#a:CGPoint, b:CGPoint) -> CGFloat {
+  private func angleBetweenPoints(a a:CGPoint, b:CGPoint) -> CGFloat {
     var angle =  atan2(b.y - a.y, b.x - a.x)
     if angle < 0 {
       angle = 2 * CG_PI + angle
@@ -91,7 +91,7 @@ class CircularGestureRecognizer: UIGestureRecognizer {
     return angle
   }
   
-  private func distanceBetweenPoints(#a:CGPoint, b:CGPoint) -> CGFloat {
+  private func distanceBetweenPoints(a a:CGPoint, b:CGPoint) -> CGFloat {
     let dx = (b.x-a.x)
     let dy = (b.y-a.y)
     return sqrt(dx*dx + dy*dy)

@@ -19,37 +19,37 @@ class ViewController: UIViewController, UIGestureRecognizerDelegate {
   private var topArrow:UIImageView = UIImageView()
   
   override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: NSBundle?) {
-    
     self.sender = IRSender()
-    self.sender.connect("10.0.0.18")
 
     self.commands = [String:[IRCommand]]()
-    self.commands["Power On"] = [
+    self.commands["power_on"] = [
       IRCommand(channel: 1, cmd: "38000,1,69,341,172,21,21,21,65,21,65,21,65,21,21,21,65,21,65,21,65,21,65,21,65,21,65,21,21,21,21,21,21,21,21,21,65,21,65,21,65,21,21,21,21,21,21,21,21,21,21,21,21,21,65,21,65,21,21,21,21,21,21,21,65,21,21,21,21,21,1508,341,85,21,3648"),
       IRCommand(channel: 2, cmd: "38000,1,69,341,170,21,21,21,21,21,21,21,21,21,21,21,21,21,21,21,64,21,21,21,21,21,21,21,21,21,64,21,64,21,64,21,21,21,21,21,21,21,21,21,21,21,21,21,21,21,64,21,64,21,64,21,64,21,64,21,64,21,64,21,64,21,21,21,21,21,1517,341,85,21,3655"),
       IRCommand(channel: 3, cmd: "40064,1,1,95,24,25,24,48,24,48,24,48,24,25,24,48,24,25,24,48,24,25,24,25,24,25,24,25,1014,95,24,25,24,48,24,48,24,48,24,25,24,48,24,25,24,48,24,25,24,25,24,25,24,25,1014,95,24,25,24,48,24,48,24,48,24,25,24,48,24,25,24,48,24,25,24,25,24,25,24,25,24")
     ]
-    self.commands["Power Off"] = [
+    self.commands["power_off"] = [
       IRCommand(channel: 2, cmd: "38000,1,69,341,170,21,21,21,21,21,21,21,21,21,21,21,21,21,21,21,64,21,21,21,21,21,21,21,21,21,64,21,64,21,64,21,21,21,64,21,64,21,64,21,64,21,64,21,21,21,21,21,64,21,21,21,21,21,21,21,21,21,21,21,64,21,64,21,21,21,1517,341,85,21,3655"),
       IRCommand(channel: 3, cmd: "40064,1,1,95,24,48,24,48,24,48,24,48,24,25,24,48,24,25,24,48,24,25,24,25,24,25,24,25,990,95,24,48,24,48,24,48,24,48,24,25,24,48,24,25,24,48,24,25,24,25,24,25,24,25,990,95,24,48,24,47,24,48,24,48,24,25,24,48,24,25,24,48,24,25,24,25,24,25,24,25,24")
     ]
-    self.commands["Volume Up"] = [
+    self.commands["volume_up"] = [
       IRCommand(channel: 2, cmd: "38000,1,1,341,170,21,21,21,21,21,21,21,21,21,21,21,21,21,21,21,64,21,21,21,21,21,21,21,21,21,64,21,64,21,64,21,21,21,64,21,64,21,64,21,21,21,21,21,21,21,64,21,64,21,21,21,21,21,21,21,64,21,64,21,64,21,21,21,21,21,500")
     ]
-    self.commands["Volume Down"] = [
+    self.commands["volume_down"] = [
       IRCommand(channel: 2, cmd: "38000,1,1,341,170,21,21,21,21,21,21,21,21,21,21,21,21,21,21,21,64,21,21,21,21,21,21,21,21,21,64,21,64,21,64,21,21,21,21,21,21,21,21,21,64,21,21,21,21,21,64,21,64,21,64,21,64,21,64,21,21,21,64,21,64,21,21,21,21,21,500"),
     ]
-    self.commands["HDMI Apple TV"] = [
+    self.commands["input_apple"] = [
       IRCommand(channel: 3, cmd: "40064,1,1,95,24,25,24,48,24,25,24,48,24,48,24,25,24,48,24,25,24,48,24,25,24,48,24,48,24,25,24,25,24,25,821,95,24,25,24,48,24,25,24,48,24,48,24,25,24,48,24,25,24,48,24,25,24,48,24,48,24,25,24,25,24,25,821,95,24,25,24,48,24,25,24,48,24,48,24,25,24,48,24,25,24,48,24,25,24,48,24,48,24,25,24,25,24,25,24")
     ]
-    self.commands["HDMI Wii"] = [
+    self.commands["input_wii"] = [
       IRCommand(channel: 3, cmd: "40064,1,1,95,24,48,24,48,24,25,24,48,24,48,24,25,24,48,24,25,24,48,24,25,24,48,24,48,24,25,24,25,24,25,798,95,24,48,24,48,24,25,24,48,24,48,24,25,24,48,24,25,24,48,24,25,24,48,24,48,24,25,24,25,24,25,798,95,24,48,24,48,24,25,24,48,24,48,24,25,24,48,24,25,24,48,24,25,24,48,24,48,24,25,24,25,24,25,24")
     ]
     
     super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
+    
+    self.reconnect()
   }
 
-  required init(coder aDecoder: NSCoder) {
+  required init?(coder aDecoder: NSCoder) {
     fatalError("init(coder:) has not been implemented")
   }
 
@@ -58,51 +58,70 @@ class ViewController: UIViewController, UIGestureRecognizerDelegate {
     
     self.view.backgroundColor = UIColor.blackColor()
     
-//    let keys = ["Volume Up", "Volume Down", "HDMI Apple TV", "HDMI Wii", "Power Off"];
-//    for(var i=0;i<keys.count;i++) {
-//      let key = keys[i]
-//      let button = UIButton(frame: CGRectMake(10, 20 + CGFloat(Double(i * 50)), self.view.bounds.width - 20, 50))
-//      button.setTitleColor(UIColor.blueColor(), forState: UIControlState.Normal)
-//      button.setTitle(key, forState: UIControlState.Normal)
-//      button.addTarget(self, action: "handleButton:", forControlEvents: UIControlEvents.TouchUpInside)
-//      self.view.addSubview(button)
-//    }
+    let centerX = self.view.bounds.width / 2
+    let marginX = round(centerX / 1.7)
     
-//    volumeLabel.textColor = UIColor.blackColor()
-//    volumeLabel.textAlignment = .Center
-//    volumeLabel.frame = CGRectMake(0, 100, self.view.bounds.width, 50)
-//    volumeLabel.userInteractionEnabled = false
-//    self.view.addSubview(volumeLabel)
-//    
+    let centerY = self.view.bounds.height / 2
+    let startY = centerY - 76 / 2 - 60 - 76
     
-    volumeView.frame = self.view.bounds
-    volumeView.userInteractionEnabled = false
-    self.view.addSubview(volumeView)
+    let power_on = CircleButton(
+      frame: CGRectMake(centerX - marginX, startY, 76, 76),
+      key: "power_on",
+      color: UIColor(red: 0.3137, green: 0.7608, blue: 0.2667, alpha: 1.0),
+      image: UIImage(named: "power_on")
+    )
+    power_on.addTarget(self, action: "handleButton:", forControlEvents: UIControlEvents.TouchUpInside);
+    self.view.addSubview(power_on)
     
-    topArrow.image = UIImage(named: "arrow")
-    topArrow.frame = CGRectMake(self.view.bounds.width / 2 - 14, self.view.bounds.height / 2 - 92, 28, 12)
-    self.view.addSubview(topArrow)
+    let power_off = CircleButton(
+      frame: CGRectMake(centerX + marginX - 76, startY, 76, 76),
+      key: "power_off",
+      color: UIColor(red: 0.7687, green: 0.2616, blue: 0.2538, alpha: 1.0),
+      image: UIImage(named: "power_off")
+    )
+    power_off.addTarget(self, action: "handleButton:", forControlEvents: UIControlEvents.TouchUpInside);
+    self.view.addSubview(power_off)
     
-    let circularRecognizer = CircularGestureRecognizer(target: self, action: "handleVolume:")
-    circularRecognizer.center = CGPointMake(self.view.frame.width / 2, self.view.frame.height / 2)
-    circularRecognizer.delegate = self
+    let input_apple = CircleButton(
+      frame: CGRectMake(centerX - marginX, startY + (76 + 60) * 1, 76, 76),
+      key: "input_apple",
+      color: UIColor(red: 0.7608, green: 0.7609, blue: 0.7608, alpha: 1.0),
+      image: UIImage(named: "input_apple")
+    )
+    input_apple.addTarget(self, action: "handleButton:", forControlEvents: UIControlEvents.TouchUpInside);
+    self.view.addSubview(input_apple)
     
-    let panRecognizer = PanFromCenterGestureRecognizer(target: self, action: "handlePan:")
-    panRecognizer.center = circularRecognizer.center
-    panRecognizer.radius = self.view.frame.width / 4
-    panRecognizer.delegate = self
-
-    self.view.addGestureRecognizer(circularRecognizer)
-    self.view.addGestureRecognizer(panRecognizer)
+    let input_wii = CircleButton(
+      frame: CGRectMake(centerX + marginX - 76, startY + (76 + 60) * 1, 76, 76),
+      key: "input_wii",
+      color: UIColor(red: 0.7608, green: 0.7609, blue: 0.7608, alpha: 1.0),
+      image: UIImage(named: "input_wii")
+    )
+    input_wii.addTarget(self, action: "handleButton:", forControlEvents: UIControlEvents.TouchUpInside);
+    self.view.addSubview(input_wii)
+    
+    let volume_down = CircleButton(
+      frame: CGRectMake(centerX - marginX, startY + (76 + 60) * 2, 76, 76),
+      key: "volume_down",
+      color: UIColor(red: 0.4493, green: 0.2424, blue: 0.7719, alpha: 1.0),
+      image: UIImage(named: "volume_down")
+    )
+    volume_down.addTarget(self, action: "handleButton:", forControlEvents: UIControlEvents.TouchUpInside);
+    self.view.addSubview(volume_down)
+    
+    let volume_up = CircleButton(
+      frame: CGRectMake(centerX + marginX - 76, startY + (76 + 60) * 2, 76, 76),
+      key: "volume_up",
+      color: UIColor(red: 0.4493, green: 0.2424, blue: 0.7719, alpha: 1.0),
+      image: UIImage(named: "volume_up")
+    )
+    volume_up.addTarget(self, action: "handleButton:", forControlEvents: UIControlEvents.TouchUpInside);
+    self.view.addSubview(volume_up)
   }
+
   
-  func handleButton(button:UIButton) {
-    if let key = button.titleForState(.Normal) {
-      if key == "HDMI Apple TV" || key == "HDMI Wii" {
-        sendCommand("Power On")
-      }
-      sendCommand(key)
-    }
+  func handleButton(button:CircleButton) {
+    sendCommand(button.key)
   }
   
   func handleVolume(recognizer:CircularGestureRecognizer) {
@@ -133,14 +152,18 @@ class ViewController: UIViewController, UIGestureRecognizerDelegate {
   
   func handlePan(recognizer:PanFromCenterGestureRecognizer) {
     if recognizer.state == UIGestureRecognizerState.Began {
-      println("began")
+      print("began")
     }
     else if recognizer.state == UIGestureRecognizerState.Changed {
       
     }
     else if recognizer.state == UIGestureRecognizerState.Ended {
-      println("ended")
+      print("ended")
     }
+  }
+  
+  func reconnect() {
+    self.sender.connect("10.0.0.18")
   }
   
   private func sendCommand(key:String) {

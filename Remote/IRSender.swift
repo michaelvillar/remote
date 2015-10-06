@@ -44,43 +44,43 @@ class IRSender: NSObject, NSStreamDelegate {
   func stream(stream: NSStream, handleEvent event: NSStreamEvent) {
     switch(event) {
     case NSStreamEvent.OpenCompleted:
-      println("connected!")
+      print("connected!")
       break
     case NSStreamEvent.HasBytesAvailable:
-      println("has bytes available!")
+      print("has bytes available!")
       if(stream == inputStream) {
         read()
       }
       break
     case NSStreamEvent.EndEncountered:
-      println("end!")
+      print("end!")
       break
     case NSStreamEvent.ErrorOccurred:
-      println("error")
+      print("error")
       break
     case NSStreamEvent.HasSpaceAvailable:
-      println("space available")
+      print("space available")
       break
     default:
-      println("default", event)
+      print("default", event)
     }
   }
   
-  override func observeValueForKeyPath(keyPath: String, ofObject object: AnyObject, change: [NSObject : AnyObject], context: UnsafeMutablePointer<Void>) {
-    println(keyPath)
+  override func observeValueForKeyPath(keyPath: String?, ofObject object: AnyObject?, change: [String : AnyObject]?, context: UnsafeMutablePointer<Void>) {
+    print(keyPath)
   }
   
   private func read() {
     var buffer = [UInt8](count: 4096, repeatedValue: 0)
     while (inputStream.hasBytesAvailable){
-      var len = inputStream.read(&buffer, maxLength: buffer.count)
+      let len = inputStream.read(&buffer, maxLength: buffer.count)
       if(len > 0){
-        var output = NSString(bytes: &buffer, length: buffer.count, encoding: NSUTF8StringEncoding)
-        println("<< \(output)")
+        let output = NSString(bytes: &buffer, length: buffer.count, encoding: NSUTF8StringEncoding)
+        print("<< \(output)")
         if (output != ""){
           let lines = output?.componentsSeparatedByString("\r") ?? []
           for line in lines {
-            let str = line as! String
+            let str = line 
             if !(str as NSString).hasPrefix("completeir") {
               continue
             }
@@ -113,7 +113,7 @@ class IRSender: NSObject, NSStreamDelegate {
     let cmd = queues[channel]?.removeAtIndex(0)
     
     currentId += 1
-    println("\(NSDate().timeIntervalSince1970) >> send 1:\(cmd!.channel),\(self.currentId)")
+    print("\(NSDate().timeIntervalSince1970) >> send 1:\(cmd!.channel),\(self.currentId)")
     let fullCmd = "sendir,1:\(cmd!.channel),\(self.currentId),\(cmd!.cmd)\r\n"
     let data:NSData = fullCmd.dataUsingEncoding(NSUTF8StringEncoding)!
     outputStream.write(UnsafePointer<UInt8>(data.bytes), maxLength: data.length)

@@ -17,7 +17,7 @@ class PanFromCenterGestureRecognizer: UIGestureRecognizer {
   var angle:CGFloat = 0
   var distance:CGFloat = 0
   
-  override func touchesBegan(touches: Set<NSObject>!, withEvent event: UIEvent!) {
+  override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent) {
     super.touchesBegan(touches, withEvent: event)
     
     if touches.count > 1 {
@@ -25,7 +25,7 @@ class PanFromCenterGestureRecognizer: UIGestureRecognizer {
       return
     }
     
-    if let touch:UITouch = touches.first as? UITouch {
+    if let touch:UITouch = touches.first {
       let point = touch.locationInView(self.view)
       if self.distanceBetweenPoints(a: point, b: center) > radius {
         self.state = UIGestureRecognizerState.Failed
@@ -34,7 +34,7 @@ class PanFromCenterGestureRecognizer: UIGestureRecognizer {
     }
   }
   
-  override func touchesMoved(touches: Set<NSObject>!, withEvent event: UIEvent!) {
+  override func touchesMoved(touches: Set<UITouch>, withEvent event: UIEvent) {
     super.touchesMoved(touches, withEvent: event)
     
     if self.state == UIGestureRecognizerState.Possible {
@@ -43,20 +43,20 @@ class PanFromCenterGestureRecognizer: UIGestureRecognizer {
       self.state = UIGestureRecognizerState.Changed
     }
     
-    if let touch:UITouch = touches.first as? UITouch {
+    if let touch:UITouch = touches.first {
       let point = touch.locationInView(self.view)
       self.distance = self.distanceBetweenPoints(a: point, b: center)
       self.angle = self.angleBetweenPoints(a: point, b: center)
-      println(abs(angle))
+      print(abs(angle))
       
       if self.isAroundAngle(abs(angle), aroundAngle: 0) ||
          self.isAroundAngle(abs(angle), aroundAngle: CG_PI * 2) {
-        println("left")
+        print("left")
       }
     }
   }
   
-  override func touchesEnded(touches: Set<NSObject>!, withEvent event: UIEvent!) {
+  override func touchesEnded(touches: Set<UITouch>, withEvent event: UIEvent) {
     super.touchesEnded(touches, withEvent: event)
     
     if self.state == UIGestureRecognizerState.Changed {
@@ -66,11 +66,11 @@ class PanFromCenterGestureRecognizer: UIGestureRecognizer {
     }
   }
   
-  override func touchesCancelled(touches: Set<NSObject>!, withEvent event: UIEvent!) {
+  override func touchesCancelled(touches: Set<UITouch>, withEvent event: UIEvent) {
     super.touchesCancelled(touches, withEvent: event)
   }
   
-  private func angleBetweenPoints(#a:CGPoint, b:CGPoint) -> CGFloat {
+  private func angleBetweenPoints(a a:CGPoint, b:CGPoint) -> CGFloat {
     var angle =  atan2(b.y - a.y, b.x - a.x)
     if angle < 0 {
       angle = 2 * CG_PI + angle
@@ -78,7 +78,7 @@ class PanFromCenterGestureRecognizer: UIGestureRecognizer {
     return angle
   }
   
-  private func distanceBetweenPoints(#a:CGPoint, b:CGPoint) -> CGFloat {
+  private func distanceBetweenPoints(a a:CGPoint, b:CGPoint) -> CGFloat {
     let dx = (b.x-a.x)
     let dy = (b.y-a.y)
     return sqrt(dx*dx + dy*dy)

@@ -328,6 +328,7 @@
 		7858967919031D53007039AB /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				LastSwiftMigration = 0700;
 				LastUpgradeCheck = 0500;
 				ORGANIZATIONNAME = colossus;
 				TargetAttributes = {
@@ -689,6 +690,7 @@
 				785896A619031D53007039AB /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		785896A719031D53007039AB /* Build configuration list for PBXNativeTarget "itachIP2IRTests" */ = {
 			isa = XCConfigurationList;
@@ -697,6 +699,7 @@
 				785896A919031D53007039AB /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		785896D2190343FA007039AB /* Build configuration list for PBXNativeTarget "itachIP2IR_OSx" */ = {
 			isa = XCConfigurationList;
@@ -705,6 +708,7 @@
 				785896D4190343FA007039AB /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		785896D5190343FA007039AB /* Build configuration list for PBXNativeTarget "itachIP2IR_OSxTests" */ = {
 			isa = XCConfigurationList;
@@ -713,6 +717,7 @@
 				785896D7190343FA007039AB /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

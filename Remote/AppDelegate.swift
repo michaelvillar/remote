@@ -11,17 +11,23 @@ import UIKit
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
-  var window: UIWindow?
-
+  var window:UIWindow?
+  var viewController:ViewController!
 
   func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
+    
+    self.viewController = ViewController()
     
     self.window = UIWindow()
     self.window?.makeKeyAndVisible()
     self.window?.frame = UIScreen.mainScreen().bounds
-    self.window?.rootViewController = ViewController()
+    self.window?.rootViewController = self.viewController
     
     return true
+  }
+  
+  func applicationDidBecomeActive(application: UIApplication) {
+    self.viewController.reconnect()
   }
 
 
