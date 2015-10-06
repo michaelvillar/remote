@@ -13,8 +13,6 @@
 		4CF58D871B6466DA004D3E5E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CF58D861B6466DA004D3E5E /* AppDelegate.swift */; };
 		4CF58D891B6466DA004D3E5E /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CF58D881B6466DA004D3E5E /* ViewController.swift */; };
 		4CF58D8E1B6466DA004D3E5E /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4CF58D8D1B6466DA004D3E5E /* Images.xcassets */; };
-		4CF58D9D1B6466DA004D3E5E /* RemoteTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CF58D9C1B6466DA004D3E5E /* RemoteTests.swift */; };
-		4CF58DDD1B646878004D3E5E /* itachIP2IR.h in Headers */ = {isa = PBXBuildFile; fileRef = 4CF58DDC1B646878004D3E5E /* itachIP2IR.h */; settings = {ATTRIBUTES = (Private, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -37,10 +35,7 @@
 		4CF58D881B6466DA004D3E5E /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		4CF58D8D1B6466DA004D3E5E /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		4CF58D961B6466DA004D3E5E /* RemoteTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RemoteTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		4CF58D9B1B6466DA004D3E5E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		4CF58D9C1B6466DA004D3E5E /* RemoteTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoteTests.swift; sourceTree = "<group>"; };
 		4CF58DD71B6467E7004D3E5E /* Remote-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Remote-Bridging-Header.h"; sourceTree = "<group>"; };
-		4CF58DDC1B646878004D3E5E /* itachIP2IR.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = itachIP2IR.h; path = "../itachIP2IR-master/itachIP2IR/itachIP2IR.h"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -65,7 +60,6 @@
 			isa = PBXGroup;
 			children = (
 				4CF58D831B6466DA004D3E5E /* Remote */,
-				4CF58D991B6466DA004D3E5E /* RemoteTests */,
 				4CF58D821B6466DA004D3E5E /* Products */,
 			);
 			sourceTree = "<group>";
@@ -96,26 +90,8 @@
 		4CF58D841B6466DA004D3E5E /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				4CF58DDC1B646878004D3E5E /* itachIP2IR.h */,
 				4CF58D851B6466DA004D3E5E /* Info.plist */,
 				4CF58DD71B6467E7004D3E5E /* Remote-Bridging-Header.h */,
-			);
-			name = "Supporting Files";
-			sourceTree = "<group>";
-		};
-		4CF58D991B6466DA004D3E5E /* RemoteTests */ = {
-			isa = PBXGroup;
-			children = (
-				4CF58D9C1B6466DA004D3E5E /* RemoteTests.swift */,
-				4CF58D9A1B6466DA004D3E5E /* Supporting Files */,
-			);
-			path = RemoteTests;
-			sourceTree = "<group>";
-		};
-		4CF58D9A1B6466DA004D3E5E /* Supporting Files */ = {
-			isa = PBXGroup;
-			children = (
-				4CF58D9B1B6466DA004D3E5E /* Info.plist */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -127,7 +103,6 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4CF58DDD1B646878004D3E5E /* itachIP2IR.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -245,7 +220,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4CF58D9D1B6466DA004D3E5E /* RemoteTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
