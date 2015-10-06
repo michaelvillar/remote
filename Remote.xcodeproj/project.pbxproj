@@ -15,16 +15,6 @@
 		4CF58D8E1B6466DA004D3E5E /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4CF58D8D1B6466DA004D3E5E /* Images.xcassets */; };
 /* End PBXBuildFile section */
 
-/* Begin PBXContainerItemProxy section */
-		4CF58D971B6466DA004D3E5E /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 4CF58D791B6466DA004D3E5E /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 4CF58D801B6466DA004D3E5E;
-			remoteInfo = Remote;
-		};
-/* End PBXContainerItemProxy section */
-
 /* Begin PBXFileReference section */
 		4C3902CA1BC3891B0005FF42 /* CircleButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CircleButton.swift; sourceTree = "<group>"; };
 		4CE8A90C1B672FE3005E7566 /* IRSender.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IRSender.swift; sourceTree = "<group>"; };
@@ -34,19 +24,11 @@
 		4CF58D861B6466DA004D3E5E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		4CF58D881B6466DA004D3E5E /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		4CF58D8D1B6466DA004D3E5E /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
-		4CF58D961B6466DA004D3E5E /* RemoteTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RemoteTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		4CF58DD71B6467E7004D3E5E /* Remote-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Remote-Bridging-Header.h"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
 		4CF58D7E1B6466DA004D3E5E /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		4CF58D931B6466DA004D3E5E /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -68,7 +50,6 @@
 			isa = PBXGroup;
 			children = (
 				4CF58D811B6466DA004D3E5E /* Remote.app */,
-				4CF58D961B6466DA004D3E5E /* RemoteTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -127,24 +108,6 @@
 			productReference = 4CF58D811B6466DA004D3E5E /* Remote.app */;
 			productType = "com.apple.product-type.application";
 		};
-		4CF58D951B6466DA004D3E5E /* RemoteTests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 4CF58DA31B6466DA004D3E5E /* Build configuration list for PBXNativeTarget "RemoteTests" */;
-			buildPhases = (
-				4CF58D921B6466DA004D3E5E /* Sources */,
-				4CF58D931B6466DA004D3E5E /* Frameworks */,
-				4CF58D941B6466DA004D3E5E /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				4CF58D981B6466DA004D3E5E /* PBXTargetDependency */,
-			);
-			name = RemoteTests;
-			productName = RemoteTests;
-			productReference = 4CF58D961B6466DA004D3E5E /* RemoteTests.xctest */;
-			productType = "com.apple.product-type.bundle.unit-test";
-		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -153,16 +116,12 @@
 			attributes = {
 				LastSwiftMigration = 0700;
 				LastSwiftUpdateCheck = 0700;
-				LastUpgradeCheck = 0640;
+				LastUpgradeCheck = 0700;
 				ORGANIZATIONNAME = michaelvillar;
 				TargetAttributes = {
 					4CF58D801B6466DA004D3E5E = {
 						CreatedOnToolsVersion = 6.4;
 						DevelopmentTeam = H9MWYLG8FW;
-					};
-					4CF58D951B6466DA004D3E5E = {
-						CreatedOnToolsVersion = 6.4;
-						TestTargetID = 4CF58D801B6466DA004D3E5E;
 					};
 				};
 			};
@@ -180,7 +139,6 @@
 			projectRoot = "";
 			targets = (
 				4CF58D801B6466DA004D3E5E /* Remote */,
-				4CF58D951B6466DA004D3E5E /* RemoteTests */,
 			);
 		};
 /* End PBXProject section */
@@ -191,13 +149,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				4CF58D8E1B6466DA004D3E5E /* Images.xcassets in Resources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		4CF58D941B6466DA004D3E5E /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -216,22 +167,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		4CF58D921B6466DA004D3E5E /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXSourcesBuildPhase section */
-
-/* Begin PBXTargetDependency section */
-		4CF58D981B6466DA004D3E5E /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 4CF58D801B6466DA004D3E5E /* Remote */;
-			targetProxy = 4CF58D971B6466DA004D3E5E /* PBXContainerItemProxy */;
-		};
-/* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
 		4CF58D9E1B6466DA004D3E5E /* Debug */ = {
@@ -255,6 +191,7 @@
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_NO_COMMON_BLOCKS = YES;
@@ -327,6 +264,7 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = Remote/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.michaelvillar.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
@@ -343,42 +281,9 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = Remote/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.michaelvillar.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
-			};
-			name = Release;
-		};
-		4CF58DA41B6466DA004D3E5E /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(SDKROOT)/Developer/Library/Frameworks",
-					"$(inherited)",
-				);
-				GCC_PREPROCESSOR_DEFINITIONS = (
-					"DEBUG=1",
-					"$(inherited)",
-				);
-				INFOPLIST_FILE = RemoteTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Remote.app/Remote";
-			};
-			name = Debug;
-		};
-		4CF58DA51B6466DA004D3E5E /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(SDKROOT)/Developer/Library/Frameworks",
-					"$(inherited)",
-				);
-				INFOPLIST_FILE = RemoteTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Remote.app/Remote";
 			};
 			name = Release;
 		};
@@ -399,15 +304,6 @@
 			buildConfigurations = (
 				4CF58DA11B6466DA004D3E5E /* Debug */,
 				4CF58DA21B6466DA004D3E5E /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		4CF58DA31B6466DA004D3E5E /* Build configuration list for PBXNativeTarget "RemoteTests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				4CF58DA41B6466DA004D3E5E /* Debug */,
-				4CF58DA51B6466DA004D3E5E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

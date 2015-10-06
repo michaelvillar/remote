@@ -85,11 +85,10 @@ class IRSender: NSObject, NSStreamDelegate {
               continue
             }
             let args = (str.componentsSeparatedByString(",") ?? [])[1].componentsSeparatedByString(":")
-            if let channelStr = args[1] as? String {
-              let channel = (channelStr as NSString).integerValue
-              availableChannels[channel] = true
-              tryChannel(channel)
-            }
+            let channelStr = args[1]
+            let channel = (channelStr as NSString).integerValue
+            availableChannels[channel] = true
+            tryChannel(channel)
           }
         }
       }
