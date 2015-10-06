@@ -13,9 +13,10 @@ class IRCommand : NSObject {
   var cmd:String = ""
   var userInfo:NSObject?
   
-  convenience init(channel:Int, cmd:String) {
+  convenience init(channel:Int, cmd:String, userInfo:NSObject?) {
     self.init()
     self.channel = channel
     self.cmd = cmd
+    self.userInfo = userInfo
   }
 }

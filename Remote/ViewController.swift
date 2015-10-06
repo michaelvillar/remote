@@ -8,6 +8,11 @@
 
 import UIKit
 
+private let greenColor:UIColor = UIColor(red: 0.3137, green: 0.7608, blue: 0.2667, alpha: 1.0)
+private let redColor:UIColor = UIColor(red: 0.7687, green: 0.2616, blue: 0.2538, alpha: 1.0)
+private let purpleColor:UIColor = UIColor(red: 0.4493, green: 0.2424, blue: 0.7719, alpha: 1.0)
+private let grayColor:UIColor = UIColor(red: 0.7608, green: 0.7609, blue: 0.7608, alpha: 1.0)
+
 class ViewController: UIViewController, UIGestureRecognizerDelegate, IRSenderDelegate {
   
   private let commands:[String:[IRCommand]]!
@@ -18,26 +23,26 @@ class ViewController: UIViewController, UIGestureRecognizerDelegate, IRSenderDel
 
     self.commands = [String:[IRCommand]]()
     self.commands["power_on"] = [
-      IRCommand(channel: 1, cmd: "38000,1,69,341,172,21,21,21,65,21,65,21,65,21,21,21,65,21,65,21,65,21,65,21,65,21,65,21,21,21,21,21,21,21,21,21,65,21,65,21,65,21,21,21,21,21,21,21,21,21,21,21,21,21,65,21,65,21,21,21,21,21,21,21,65,21,21,21,21,21,1508,341,85,21,3648"),
-      IRCommand(channel: 2, cmd: "38000,1,69,341,170,21,21,21,21,21,21,21,21,21,21,21,21,21,21,21,64,21,21,21,21,21,21,21,21,21,64,21,64,21,64,21,21,21,21,21,21,21,21,21,21,21,21,21,21,21,64,21,64,21,64,21,64,21,64,21,64,21,64,21,64,21,21,21,21,21,1517,341,85,21,3655"),
-      IRCommand(channel: 3, cmd: "40064,1,1,95,24,25,24,48,24,48,24,48,24,25,24,48,24,25,24,48,24,25,24,25,24,25,24,25,1014,95,24,25,24,48,24,48,24,48,24,25,24,48,24,25,24,48,24,25,24,25,24,25,24,25,1014,95,24,25,24,48,24,48,24,48,24,25,24,48,24,25,24,48,24,25,24,25,24,25,24,25,24"),
-      IRCommand(channel: 3, cmd: "40064,1,1,95,24,25,24,48,24,48,24,48,24,25,24,48,24,25,24,48,24,25,24,25,24,25,24,25,1014,95,24,25,24,48,24,48,24,48,24,25,24,48,24,25,24,48,24,25,24,25,24,25,24,25,1014,95,24,25,24,48,24,48,24,48,24,25,24,48,24,25,24,48,24,25,24,25,24,25,24,25,24")
+      IRCommand(channel: 1, cmd: "38000,1,69,341,172,21,21,21,65,21,65,21,65,21,21,21,65,21,65,21,65,21,65,21,65,21,65,21,21,21,21,21,21,21,21,21,65,21,65,21,65,21,21,21,21,21,21,21,21,21,21,21,21,21,65,21,65,21,21,21,21,21,21,21,65,21,21,21,21,21,1508,341,85,21,3648", userInfo: greenColor),
+      IRCommand(channel: 2, cmd: "38000,1,69,341,170,21,21,21,21,21,21,21,21,21,21,21,21,21,21,21,64,21,21,21,21,21,21,21,21,21,64,21,64,21,64,21,21,21,21,21,21,21,21,21,21,21,21,21,21,21,64,21,64,21,64,21,64,21,64,21,64,21,64,21,64,21,21,21,21,21,1517,341,85,21,3655", userInfo: greenColor),
+      IRCommand(channel: 3, cmd: "40064,1,1,95,24,25,24,48,24,48,24,48,24,25,24,48,24,25,24,48,24,25,24,25,24,25,24,25,1014,95,24,25,24,48,24,48,24,48,24,25,24,48,24,25,24,48,24,25,24,25,24,25,24,25,1014,95,24,25,24,48,24,48,24,48,24,25,24,48,24,25,24,48,24,25,24,25,24,25,24,25,24", userInfo: greenColor),
+      IRCommand(channel: 3, cmd: "40064,1,1,95,24,25,24,48,24,48,24,48,24,25,24,48,24,25,24,48,24,25,24,25,24,25,24,25,1014,95,24,25,24,48,24,48,24,48,24,25,24,48,24,25,24,48,24,25,24,25,24,25,24,25,1014,95,24,25,24,48,24,48,24,48,24,25,24,48,24,25,24,48,24,25,24,25,24,25,24,25,24", userInfo: greenColor)
     ]
     self.commands["power_off"] = [
-      IRCommand(channel: 2, cmd: "38000,1,69,341,170,21,21,21,21,21,21,21,21,21,21,21,21,21,21,21,64,21,21,21,21,21,21,21,21,21,64,21,64,21,64,21,21,21,64,21,64,21,64,21,64,21,64,21,21,21,21,21,64,21,21,21,21,21,21,21,21,21,21,21,64,21,64,21,21,21,1517,341,85,21,3655"),
-      IRCommand(channel: 3, cmd: "40064,1,1,95,24,48,24,48,24,48,24,48,24,25,24,48,24,25,24,48,24,25,24,25,24,25,24,25,990,95,24,48,24,48,24,48,24,48,24,25,24,48,24,25,24,48,24,25,24,25,24,25,24,25,990,95,24,48,24,47,24,48,24,48,24,25,24,48,24,25,24,48,24,25,24,25,24,25,24,25,24")
+      IRCommand(channel: 2, cmd: "38000,1,69,341,170,21,21,21,21,21,21,21,21,21,21,21,21,21,21,21,64,21,21,21,21,21,21,21,21,21,64,21,64,21,64,21,21,21,64,21,64,21,64,21,64,21,64,21,21,21,21,21,64,21,21,21,21,21,21,21,21,21,21,21,64,21,64,21,21,21,1517,341,85,21,3655", userInfo: redColor),
+      IRCommand(channel: 3, cmd: "40064,1,1,95,24,48,24,48,24,48,24,48,24,25,24,48,24,25,24,48,24,25,24,25,24,25,24,25,990,95,24,48,24,48,24,48,24,48,24,25,24,48,24,25,24,48,24,25,24,25,24,25,24,25,990,95,24,48,24,47,24,48,24,48,24,25,24,48,24,25,24,48,24,25,24,25,24,25,24,25,24", userInfo: redColor)
     ]
     self.commands["volume_up"] = [
-      IRCommand(channel: 2, cmd: "38000,1,1,341,170,21,21,21,21,21,21,21,21,21,21,21,21,21,21,21,64,21,21,21,21,21,21,21,21,21,64,21,64,21,64,21,21,21,64,21,64,21,64,21,21,21,21,21,21,21,64,21,64,21,21,21,21,21,21,21,64,21,64,21,64,21,21,21,21,21,500")
+      IRCommand(channel: 2, cmd: "38000,1,1,341,170,21,21,21,21,21,21,21,21,21,21,21,21,21,21,21,64,21,21,21,21,21,21,21,21,21,64,21,64,21,64,21,21,21,64,21,64,21,64,21,21,21,21,21,21,21,64,21,64,21,21,21,21,21,21,21,64,21,64,21,64,21,21,21,21,21,500", userInfo: purpleColor)
     ]
     self.commands["volume_down"] = [
-      IRCommand(channel: 2, cmd: "38000,1,1,341,170,21,21,21,21,21,21,21,21,21,21,21,21,21,21,21,64,21,21,21,21,21,21,21,21,21,64,21,64,21,64,21,21,21,21,21,21,21,21,21,64,21,21,21,21,21,64,21,64,21,64,21,64,21,64,21,21,21,64,21,64,21,21,21,21,21,500"),
+      IRCommand(channel: 2, cmd: "38000,1,1,341,170,21,21,21,21,21,21,21,21,21,21,21,21,21,21,21,64,21,21,21,21,21,21,21,21,21,64,21,64,21,64,21,21,21,21,21,21,21,21,21,64,21,21,21,21,21,64,21,64,21,64,21,64,21,64,21,21,21,64,21,64,21,21,21,21,21,500", userInfo: purpleColor),
     ]
     self.commands["input_apple"] = [
-      IRCommand(channel: 3, cmd: "40064,1,1,95,24,25,24,48,24,25,24,48,24,48,24,25,24,48,24,25,24,48,24,25,24,48,24,48,24,25,24,25,24,25,821,95,24,25,24,48,24,25,24,48,24,48,24,25,24,48,24,25,24,48,24,25,24,48,24,48,24,25,24,25,24,25,821,95,24,25,24,48,24,25,24,48,24,48,24,25,24,48,24,25,24,48,24,25,24,48,24,48,24,25,24,25,24,25,24")
+      IRCommand(channel: 3, cmd: "40064,1,1,95,24,25,24,48,24,25,24,48,24,48,24,25,24,48,24,25,24,48,24,25,24,48,24,48,24,25,24,25,24,25,821,95,24,25,24,48,24,25,24,48,24,48,24,25,24,48,24,25,24,48,24,25,24,48,24,48,24,25,24,25,24,25,821,95,24,25,24,48,24,25,24,48,24,48,24,25,24,48,24,25,24,48,24,25,24,48,24,48,24,25,24,25,24,25,24", userInfo: grayColor)
     ]
     self.commands["input_wii"] = [
-      IRCommand(channel: 3, cmd: "40064,1,1,95,24,48,24,48,24,25,24,48,24,48,24,25,24,48,24,25,24,48,24,25,24,48,24,48,24,25,24,25,24,25,798,95,24,48,24,48,24,25,24,48,24,48,24,25,24,48,24,25,24,48,24,25,24,48,24,48,24,25,24,25,24,25,798,95,24,48,24,48,24,25,24,48,24,48,24,25,24,48,24,25,24,48,24,25,24,48,24,48,24,25,24,25,24,25,24")
+      IRCommand(channel: 3, cmd: "40064,1,1,95,24,48,24,48,24,25,24,48,24,48,24,25,24,48,24,25,24,48,24,25,24,48,24,48,24,25,24,25,24,25,798,95,24,48,24,48,24,25,24,48,24,48,24,25,24,48,24,25,24,48,24,25,24,48,24,48,24,25,24,25,24,25,798,95,24,48,24,48,24,25,24,48,24,48,24,25,24,48,24,25,24,48,24,25,24,48,24,48,24,25,24,25,24,25,24", userInfo: grayColor)
     ]
     
     super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
@@ -64,7 +69,7 @@ class ViewController: UIViewController, UIGestureRecognizerDelegate, IRSenderDel
     let power_on = CircleButton(
       frame: CGRectMake(startX, startY, 76, 76),
       key: "power_on",
-      color: UIColor(red: 0.3137, green: 0.7608, blue: 0.2667, alpha: 1.0),
+      color: greenColor,
       image: UIImage(named: "power_on")
     )
     power_on.addTarget(self, action: "handleButton:", forControlEvents: UIControlEvents.TouchUpInside);
@@ -73,7 +78,7 @@ class ViewController: UIViewController, UIGestureRecognizerDelegate, IRSenderDel
     let power_off = CircleButton(
       frame: CGRectMake(startX + 76 + 40, startY, 76, 76),
       key: "power_off",
-      color: UIColor(red: 0.7687, green: 0.2616, blue: 0.2538, alpha: 1.0),
+      color: redColor,
       image: UIImage(named: "power_off")
     )
     power_off.addTarget(self, action: "handleButton:", forControlEvents: UIControlEvents.TouchUpInside);
@@ -82,7 +87,7 @@ class ViewController: UIViewController, UIGestureRecognizerDelegate, IRSenderDel
     let input_apple = CircleButton(
       frame: CGRectMake(startX, startY + (76 + 60) * 1, 76, 76),
       key: "input_apple",
-      color: UIColor(red: 0.7608, green: 0.7609, blue: 0.7608, alpha: 1.0),
+      color: grayColor,
       image: UIImage(named: "input_apple")
     )
     input_apple.addTarget(self, action: "handleButton:", forControlEvents: UIControlEvents.TouchUpInside);
@@ -91,7 +96,7 @@ class ViewController: UIViewController, UIGestureRecognizerDelegate, IRSenderDel
     let input_wii = CircleButton(
       frame: CGRectMake(startX + 76 + 40, startY + (76 + 60) * 1, 76, 76),
       key: "input_wii",
-      color: UIColor(red: 0.7608, green: 0.7609, blue: 0.7608, alpha: 1.0),
+      color: grayColor,
       image: UIImage(named: "input_wii")
     )
     input_wii.addTarget(self, action: "handleButton:", forControlEvents: UIControlEvents.TouchUpInside);
@@ -100,7 +105,7 @@ class ViewController: UIViewController, UIGestureRecognizerDelegate, IRSenderDel
     let volume_down = CircleButton(
       frame: CGRectMake(startX, startY + (76 + 60) * 2, 76, 76),
       key: "volume_down",
-      color: UIColor(red: 0.4493, green: 0.2424, blue: 0.7719, alpha: 1.0),
+      color: purpleColor,
       image: UIImage(named: "volume_down")
     )
     volume_down.addTarget(self, action: "handleButton:", forControlEvents: UIControlEvents.TouchUpInside);
@@ -109,7 +114,7 @@ class ViewController: UIViewController, UIGestureRecognizerDelegate, IRSenderDel
     let volume_up = CircleButton(
       frame: CGRectMake(startX + 76 + 40, startY + (76 + 60) * 2, 76, 76),
       key: "volume_up",
-      color: UIColor(red: 0.4493, green: 0.2424, blue: 0.7719, alpha: 1.0),
+      color: purpleColor,
       image: UIImage(named: "volume_up")
     )
     volume_up.addTarget(self, action: "handleButton:", forControlEvents: UIControlEvents.TouchUpInside);
@@ -117,7 +122,7 @@ class ViewController: UIViewController, UIGestureRecognizerDelegate, IRSenderDel
   }
   
   func handleButton(button:CircleButton) {
-    sendCommand(button.key, color: button.mainColor)
+    sendCommand(button.key)
   }
   
   func reconnect() {
@@ -128,10 +133,9 @@ class ViewController: UIViewController, UIGestureRecognizerDelegate, IRSenderDel
     return true
   }
   
-  private func sendCommand(key:String, color:UIColor) {
+  func sendCommand(key:String) {
     if let cmds = self.commands[key] {
       for cmd in cmds {
-        cmd.userInfo = color
         sender.send(cmd)
       }
     }
