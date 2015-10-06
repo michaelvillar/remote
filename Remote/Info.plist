@@ -5,24 +5,32 @@
 	<key>UIApplicationShortcutItems</key>
 	<array>
 		<dict>
+			<key>UIApplicationShortcutItemIconFile</key>
+			<string>shortcut_power_on</string>
 			<key>UIApplicationShortcutItemType</key>
 			<string>com.michaelvillar.remote.power_on</string>
 			<key>UIApplicationShortcutItemTitle</key>
 			<string>Turn On</string>
 		</dict>
 		<dict>
+			<key>UIApplicationShortcutItemIconFile</key>
+			<string>shortcut_power_off</string>
 			<key>UIApplicationShortcutItemType</key>
 			<string>com.michaelvillar.remote.power_off</string>
 			<key>UIApplicationShortcutItemTitle</key>
 			<string>Turn Off</string>
 		</dict>
 		<dict>
+			<key>UIApplicationShortcutItemIconFile</key>
+			<string>shortcut_input_apple</string>
 			<key>UIApplicationShortcutItemType</key>
 			<string>com.michaelvillar.remote.input_apple</string>
 			<key>UIApplicationShortcutItemTitle</key>
 			<string>Apple TV</string>
 		</dict>
 		<dict>
+			<key>UIApplicationShortcutItemIconFile</key>
+			<string>shortcut_input_wii</string>
 			<key>UIApplicationShortcutItemType</key>
 			<string>com.michaelvillar.remote.input_wii</string>
 			<key>UIApplicationShortcutItemTitle</key>
