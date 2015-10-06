@@ -55,13 +55,13 @@ class ViewController: UIViewController, UIGestureRecognizerDelegate {
     self.view.backgroundColor = UIColor.blackColor()
     
     let centerX = self.view.bounds.width / 2
-    let marginX = centerX - 20 - 76
+    let startX = centerX - 20 - 76
     
     let centerY = self.view.bounds.height / 2
     let startY = centerY - 76 / 2 - 60 - 76
     
     let power_on = CircleButton(
-      frame: CGRectMake(centerX - marginX, startY, 76, 76),
+      frame: CGRectMake(startX, startY, 76, 76),
       key: "power_on",
       color: UIColor(red: 0.3137, green: 0.7608, blue: 0.2667, alpha: 1.0),
       image: UIImage(named: "power_on")
@@ -70,7 +70,7 @@ class ViewController: UIViewController, UIGestureRecognizerDelegate {
     self.view.addSubview(power_on)
     
     let power_off = CircleButton(
-      frame: CGRectMake(centerX + marginX - 76, startY, 76, 76),
+      frame: CGRectMake(startX + 76 + 40, startY, 76, 76),
       key: "power_off",
       color: UIColor(red: 0.7687, green: 0.2616, blue: 0.2538, alpha: 1.0),
       image: UIImage(named: "power_off")
@@ -79,7 +79,7 @@ class ViewController: UIViewController, UIGestureRecognizerDelegate {
     self.view.addSubview(power_off)
     
     let input_apple = CircleButton(
-      frame: CGRectMake(centerX - marginX, startY + (76 + 60) * 1, 76, 76),
+      frame: CGRectMake(startX, startY + (76 + 60) * 1, 76, 76),
       key: "input_apple",
       color: UIColor(red: 0.7608, green: 0.7609, blue: 0.7608, alpha: 1.0),
       image: UIImage(named: "input_apple")
@@ -88,7 +88,7 @@ class ViewController: UIViewController, UIGestureRecognizerDelegate {
     self.view.addSubview(input_apple)
     
     let input_wii = CircleButton(
-      frame: CGRectMake(centerX + marginX - 76, startY + (76 + 60) * 1, 76, 76),
+      frame: CGRectMake(startX + 76 + 40, startY + (76 + 60) * 1, 76, 76),
       key: "input_wii",
       color: UIColor(red: 0.7608, green: 0.7609, blue: 0.7608, alpha: 1.0),
       image: UIImage(named: "input_wii")
@@ -97,7 +97,7 @@ class ViewController: UIViewController, UIGestureRecognizerDelegate {
     self.view.addSubview(input_wii)
     
     let volume_down = CircleButton(
-      frame: CGRectMake(centerX - marginX, startY + (76 + 60) * 2, 76, 76),
+      frame: CGRectMake(startX, startY + (76 + 60) * 2, 76, 76),
       key: "volume_down",
       color: UIColor(red: 0.4493, green: 0.2424, blue: 0.7719, alpha: 1.0),
       image: UIImage(named: "volume_down")
@@ -106,7 +106,7 @@ class ViewController: UIViewController, UIGestureRecognizerDelegate {
     self.view.addSubview(volume_down)
     
     let volume_up = CircleButton(
-      frame: CGRectMake(centerX + marginX - 76, startY + (76 + 60) * 2, 76, 76),
+      frame: CGRectMake(startX + 76 + 40, startY + (76 + 60) * 2, 76, 76),
       key: "volume_up",
       color: UIColor(red: 0.4493, green: 0.2424, blue: 0.7719, alpha: 1.0),
       image: UIImage(named: "volume_up")
