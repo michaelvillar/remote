@@ -11,6 +11,7 @@ import Foundation
 class IRCommand : NSObject {
   var channel:Int = -1
   var cmd:String = ""
+  var userInfo:NSObject?
   
   convenience init(channel:Int, cmd:String) {
     self.init()

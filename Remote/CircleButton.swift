@@ -26,6 +26,8 @@ class CircleButton: UIControl {
     imageView = UIImageView(image: image)
     imageView.frame = self.bounds
     self.addSubview(imageView)
+    
+    self.addTarget(self, action: "handleTouch:", forControlEvents: UIControlEvents.TouchUpInside)
   }
 
   required init?(coder aDecoder: NSCoder) {
@@ -42,18 +44,18 @@ class CircleButton: UIControl {
         
         mainColor.getHue(&hue, saturation: &saturation, brightness: &brightness, alpha: &alpha)
         self.backgroundColor = UIColor(hue: hue, saturation: min(1, saturation * 1.1), brightness: min(1, brightness * 1.3), alpha: alpha)
-        self.animateHighlightCircle()
       } else {
         self.backgroundColor = self.mainColor
       }
     }
   }
   
-  private func animateHighlightCircle() {
+  func handleTouch(button:UIButton) {
     let margin:CGFloat = 20
     let circle = CircleHighlight(frame: CGRectInset(self.bounds, -margin, -margin), color: self.mainColor)
     let scale:CGFloat = self.bounds.width / (self.bounds.width + margin)
     circle.transform = CGAffineTransformMakeScale(scale, scale)
+    circle.userInteractionEnabled = false
     self.addSubview(circle)
     
     UIView.animateWithDuration(0.3,

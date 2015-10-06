@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ViewController: UIViewController, UIGestureRecognizerDelegate {
+class ViewController: UIViewController, UIGestureRecognizerDelegate, IRSenderDelegate {
   
   private let commands:[String:[IRCommand]]!
   private let sender:IRSender!
@@ -42,6 +42,7 @@ class ViewController: UIViewController, UIGestureRecognizerDelegate {
     
     super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
     
+    self.sender.delegate = self
     self.reconnect()
   }
 
@@ -116,7 +117,7 @@ class ViewController: UIViewController, UIGestureRecognizerDelegate {
   }
   
   func handleButton(button:CircleButton) {
-    sendCommand(button.key)
+    sendCommand(button.key, color: button.mainColor)
   }
   
   func reconnect() {
@@ -127,12 +128,46 @@ class ViewController: UIViewController, UIGestureRecognizerDelegate {
     return true
   }
   
-  private func sendCommand(key:String) {
+  private func sendCommand(key:String, color:UIColor) {
     if let cmds = self.commands[key] {
       for cmd in cmds {
+        cmd.userInfo = color
         sender.send(cmd)
       }
     }
+  }
+  
+  private func animateSignal(color: UIColor) {
+    let centerY = self.view.bounds.height / 2
+    let startY = centerY - 76 / 2 - 60 - 76
+    let width:CGFloat = 192
+    
+    let signalView = UIView(frame: CGRectMake(self.view.bounds.width / 2 - width / 2, startY / 2 - 1, width, 2))
+    signalView.backgroundColor = color
+    signalView.transform = CGAffineTransformMakeScale(12.0 / width, 1)
+    self.view.addSubview(signalView)
+    
+    UIView.animateWithDuration(0.5,
+      delay: 0,
+      options: UIViewAnimationOptions.CurveEaseInOut,
+      animations: {
+        signalView.transform = CGAffineTransformIdentity
+      }) { (bool) -> Void in
+    }
+    
+    UIView.animateWithDuration(0.5,
+      delay: 0,
+      options: UIViewAnimationOptions.CurveEaseIn,
+      animations: {
+        signalView.alpha = 0.0
+      }) { (bool) -> Void in
+        signalView.removeFromSuperview()
+    }
+  }
+  
+  // IRSenderDelegate
+  func senderDidSendCommand(sender: IRSender, cmd: IRCommand) {
+    animateSignal(cmd.userInfo as! UIColor)
   }
 
 }

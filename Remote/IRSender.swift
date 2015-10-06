@@ -8,12 +8,18 @@
 
 import Foundation
 
+protocol IRSenderDelegate {
+  func senderDidSendCommand(sender:IRSender, cmd:IRCommand)
+}
+
 class IRSender: NSObject, NSStreamDelegate {
   private var inputStream:NSInputStream!
   private var outputStream:NSOutputStream!
   private var currentId:Int = 0
   private var queues:[Int:[IRCommand]] = [Int:[IRCommand]]()
   private var availableChannels:[Int:Bool] = [Int:Bool]()
+  
+  var delegate:IRSenderDelegate?
   
   override init() {
     super.init()
@@ -116,6 +122,8 @@ class IRSender: NSObject, NSStreamDelegate {
     let fullCmd = "sendir,1:\(cmd!.channel),\(self.currentId),\(cmd!.cmd)\r\n"
     let data:NSData = fullCmd.dataUsingEncoding(NSUTF8StringEncoding)!
     outputStream.write(UnsafePointer<UInt8>(data.bytes), maxLength: data.length)
+    
+    delegate?.senderDidSendCommand(self, cmd: cmd!)
   }
 
 }
