@@ -15,8 +15,6 @@
 		4CF58D8E1B6466DA004D3E5E /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4CF58D8D1B6466DA004D3E5E /* Images.xcassets */; };
 		4CF58D9D1B6466DA004D3E5E /* RemoteTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CF58D9C1B6466DA004D3E5E /* RemoteTests.swift */; };
 		4CF58DDD1B646878004D3E5E /* itachIP2IR.h in Headers */ = {isa = PBXBuildFile; fileRef = 4CF58DDC1B646878004D3E5E /* itachIP2IR.h */; settings = {ATTRIBUTES = (Private, ); }; };
-		4CF58DE21B64B731004D3E5E /* DPCircularGestureRecognizer.h in Headers */ = {isa = PBXBuildFile; fileRef = 4CF58DE01B64B731004D3E5E /* DPCircularGestureRecognizer.h */; };
-		4CF58DE31B64B731004D3E5E /* DPCircularGestureRecognizer.m in Sources */ = {isa = PBXBuildFile; fileRef = 4CF58DE11B64B731004D3E5E /* DPCircularGestureRecognizer.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -43,8 +41,6 @@
 		4CF58D9C1B6466DA004D3E5E /* RemoteTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoteTests.swift; sourceTree = "<group>"; };
 		4CF58DD71B6467E7004D3E5E /* Remote-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Remote-Bridging-Header.h"; sourceTree = "<group>"; };
 		4CF58DDC1B646878004D3E5E /* itachIP2IR.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = itachIP2IR.h; path = "../itachIP2IR-master/itachIP2IR/itachIP2IR.h"; sourceTree = "<group>"; };
-		4CF58DE01B64B731004D3E5E /* DPCircularGestureRecognizer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DPCircularGestureRecognizer.h; path = dpcirculargesturerecognizer/DPCircularGestureRecognizer.h; sourceTree = SOURCE_ROOT; };
-		4CF58DE11B64B731004D3E5E /* DPCircularGestureRecognizer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DPCircularGestureRecognizer.m; path = dpcirculargesturerecognizer/DPCircularGestureRecognizer.m; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -92,7 +88,6 @@
 				4CE8A90F1B6748EE005E7566 /* IRCommand.swift */,
 				4C3902CA1BC3891B0005FF42 /* CircleButton.swift */,
 				4CF58D8D1B6466DA004D3E5E /* Images.xcassets */,
-				4CF58DDF1B64B725004D3E5E /* Vendor */,
 				4CF58D841B6466DA004D3E5E /* Supporting Files */,
 			);
 			path = Remote;
@@ -125,15 +120,6 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
-		4CF58DDF1B64B725004D3E5E /* Vendor */ = {
-			isa = PBXGroup;
-			children = (
-				4CF58DE01B64B731004D3E5E /* DPCircularGestureRecognizer.h */,
-				4CF58DE11B64B731004D3E5E /* DPCircularGestureRecognizer.m */,
-			);
-			name = Vendor;
-			sourceTree = "<group>";
-		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
@@ -142,7 +128,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				4CF58DDD1B646878004D3E5E /* itachIP2IR.h in Headers */,
-				4CF58DE21B64B731004D3E5E /* DPCircularGestureRecognizer.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -252,7 +237,6 @@
 				4C3902CB1BC3891B0005FF42 /* CircleButton.swift in Sources */,
 				4CF58D891B6466DA004D3E5E /* ViewController.swift in Sources */,
 				4CE8A90D1B672FE3005E7566 /* IRSender.swift in Sources */,
-				4CF58DE31B64B731004D3E5E /* DPCircularGestureRecognizer.m in Sources */,
 				4CF58D871B6466DA004D3E5E /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

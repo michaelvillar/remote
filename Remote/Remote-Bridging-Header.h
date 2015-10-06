@@ -9,7 +9,4 @@
 #ifndef Remote_Remote_Bridging_Header_h
 #define Remote_Remote_Bridging_Header_h
 
-#import "itachIP2IR.h"
-#import "DPCircularGestureRecognizer.h"
-
 #endif
