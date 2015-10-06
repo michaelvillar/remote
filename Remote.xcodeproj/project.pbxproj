@@ -15,7 +15,6 @@
 		4CF58D8E1B6466DA004D3E5E /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4CF58D8D1B6466DA004D3E5E /* Images.xcassets */; };
 		4CF58D9D1B6466DA004D3E5E /* RemoteTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CF58D9C1B6466DA004D3E5E /* RemoteTests.swift */; };
 		4CF58DDD1B646878004D3E5E /* itachIP2IR.h in Headers */ = {isa = PBXBuildFile; fileRef = 4CF58DDC1B646878004D3E5E /* itachIP2IR.h */; settings = {ATTRIBUTES = (Private, ); }; };
-		4CF58DDE1B64690A004D3E5E /* libitachIP2IR.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 4CF58DCE1B646765004D3E5E /* libitachIP2IR.a */; };
 		4CF58DE21B64B731004D3E5E /* DPCircularGestureRecognizer.h in Headers */ = {isa = PBXBuildFile; fileRef = 4CF58DE01B64B731004D3E5E /* DPCircularGestureRecognizer.h */; };
 		4CF58DE31B64B731004D3E5E /* DPCircularGestureRecognizer.m in Sources */ = {isa = PBXBuildFile; fileRef = 4CF58DE11B64B731004D3E5E /* DPCircularGestureRecognizer.m */; };
 /* End PBXBuildFile section */
@@ -27,41 +26,6 @@
 			proxyType = 1;
 			remoteGlobalIDString = 4CF58D801B6466DA004D3E5E;
 			remoteInfo = Remote;
-		};
-		4CF58DCD1B646765004D3E5E /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 4CF58DC61B646764004D3E5E /* itachIP2IR.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 7858968119031D53007039AB;
-			remoteInfo = itachIP2IR;
-		};
-		4CF58DCF1B646765004D3E5E /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 4CF58DC61B646764004D3E5E /* itachIP2IR.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 7858969119031D53007039AB;
-			remoteInfo = itachIP2IRTests;
-		};
-		4CF58DD11B646765004D3E5E /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 4CF58DC61B646764004D3E5E /* itachIP2IR.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 785896B3190343F9007039AB;
-			remoteInfo = itachIP2IR_OSx;
-		};
-		4CF58DD31B646765004D3E5E /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 4CF58DC61B646764004D3E5E /* itachIP2IR.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 785896C4190343FA007039AB;
-			remoteInfo = itachIP2IR_OSxTests;
-		};
-		4CF58DD51B646772004D3E5E /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 4CF58DC61B646764004D3E5E /* itachIP2IR.xcodeproj */;
-			proxyType = 1;
-			remoteGlobalIDString = 7858968019031D53007039AB;
-			remoteInfo = itachIP2IR;
 		};
 /* End PBXContainerItemProxy section */
 
@@ -77,7 +41,6 @@
 		4CF58D961B6466DA004D3E5E /* RemoteTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RemoteTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		4CF58D9B1B6466DA004D3E5E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4CF58D9C1B6466DA004D3E5E /* RemoteTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoteTests.swift; sourceTree = "<group>"; };
-		4CF58DC61B646764004D3E5E /* itachIP2IR.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = itachIP2IR.xcodeproj; path = "itachIP2IR-master/itachIP2IR.xcodeproj"; sourceTree = "<group>"; };
 		4CF58DD71B6467E7004D3E5E /* Remote-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Remote-Bridging-Header.h"; sourceTree = "<group>"; };
 		4CF58DDC1B646878004D3E5E /* itachIP2IR.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = itachIP2IR.h; path = "../itachIP2IR-master/itachIP2IR/itachIP2IR.h"; sourceTree = "<group>"; };
 		4CF58DE01B64B731004D3E5E /* DPCircularGestureRecognizer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DPCircularGestureRecognizer.h; path = dpcirculargesturerecognizer/DPCircularGestureRecognizer.h; sourceTree = SOURCE_ROOT; };
@@ -89,7 +52,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4CF58DDE1B64690A004D3E5E /* libitachIP2IR.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -109,7 +71,6 @@
 				4CF58D831B6466DA004D3E5E /* Remote */,
 				4CF58D991B6466DA004D3E5E /* RemoteTests */,
 				4CF58D821B6466DA004D3E5E /* Products */,
-				4CF58DC61B646764004D3E5E /* itachIP2IR.xcodeproj */,
 			);
 			sourceTree = "<group>";
 		};
@@ -164,17 +125,6 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
-		4CF58DC71B646764004D3E5E /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				4CF58DCE1B646765004D3E5E /* libitachIP2IR.a */,
-				4CF58DD01B646765004D3E5E /* itachIP2IRTests.xctest */,
-				4CF58DD21B646765004D3E5E /* itachIP2IR_OSx.dylib */,
-				4CF58DD41B646765004D3E5E /* itachIP2IR_OSxTests.xctest */,
-			);
-			name = Products;
-			sourceTree = "<group>";
-		};
 		4CF58DDF1B64B725004D3E5E /* Vendor */ = {
 			isa = PBXGroup;
 			children = (
@@ -211,7 +161,6 @@
 			buildRules = (
 			);
 			dependencies = (
-				4CF58DD61B646772004D3E5E /* PBXTargetDependency */,
 			);
 			name = Remote;
 			productName = Remote;
@@ -268,12 +217,6 @@
 			mainGroup = 4CF58D781B6466DA004D3E5E;
 			productRefGroup = 4CF58D821B6466DA004D3E5E /* Products */;
 			projectDirPath = "";
-			projectReferences = (
-				{
-					ProductGroup = 4CF58DC71B646764004D3E5E /* Products */;
-					ProjectRef = 4CF58DC61B646764004D3E5E /* itachIP2IR.xcodeproj */;
-				},
-			);
 			projectRoot = "";
 			targets = (
 				4CF58D801B6466DA004D3E5E /* Remote */,
@@ -281,37 +224,6 @@
 			);
 		};
 /* End PBXProject section */
-
-/* Begin PBXReferenceProxy section */
-		4CF58DCE1B646765004D3E5E /* libitachIP2IR.a */ = {
-			isa = PBXReferenceProxy;
-			fileType = archive.ar;
-			path = libitachIP2IR.a;
-			remoteRef = 4CF58DCD1B646765004D3E5E /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		4CF58DD01B646765004D3E5E /* itachIP2IRTests.xctest */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.cfbundle;
-			path = itachIP2IRTests.xctest;
-			remoteRef = 4CF58DCF1B646765004D3E5E /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		4CF58DD21B646765004D3E5E /* itachIP2IR_OSx.dylib */ = {
-			isa = PBXReferenceProxy;
-			fileType = "compiled.mach-o.dylib";
-			path = itachIP2IR_OSx.dylib;
-			remoteRef = 4CF58DD11B646765004D3E5E /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		4CF58DD41B646765004D3E5E /* itachIP2IR_OSxTests.xctest */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.cfbundle;
-			path = itachIP2IR_OSxTests.xctest;
-			remoteRef = 4CF58DD31B646765004D3E5E /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-/* End PBXReferenceProxy section */
 
 /* Begin PBXResourcesBuildPhase section */
 		4CF58D7F1B6466DA004D3E5E /* Resources */ = {
@@ -360,11 +272,6 @@
 			isa = PBXTargetDependency;
 			target = 4CF58D801B6466DA004D3E5E /* Remote */;
 			targetProxy = 4CF58D971B6466DA004D3E5E /* PBXContainerItemProxy */;
-		};
-		4CF58DD61B646772004D3E5E /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = itachIP2IR;
-			targetProxy = 4CF58DD51B646772004D3E5E /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
