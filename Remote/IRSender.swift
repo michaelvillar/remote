@@ -102,6 +102,10 @@ class IRSender: NSObject, NSStreamDelegate {
   }
   
   private func tryChannel(channel:Int) {
+    if !outputStream.hasSpaceAvailable {
+      return
+    }
+    
     if availableChannels[channel] == nil {
       availableChannels[channel] = true
     }
