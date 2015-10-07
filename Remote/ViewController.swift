@@ -17,9 +17,10 @@ class ViewController: UIViewController, UIGestureRecognizerDelegate, IRSenderDel
   
   private let commands:[String:[IRCommand]]!
   private let sender:IRSender!
+  private let label:UILabel = UILabel(frame: CGRectZero)
   
   override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: NSBundle?) {
-    self.sender = IRSender()
+    self.sender = IRSender(ip: "10.0.0.18")
 
     self.commands = [String:[IRCommand]]()
     self.commands["power_on"] = [
@@ -126,7 +127,7 @@ class ViewController: UIViewController, UIGestureRecognizerDelegate, IRSenderDel
   }
   
   func reconnect() {
-    self.sender.connect("10.0.0.18")
+    self.sender.connect()
   }
   
   override func prefersStatusBarHidden() -> Bool {
@@ -172,6 +173,30 @@ class ViewController: UIViewController, UIGestureRecognizerDelegate, IRSenderDel
   // IRSenderDelegate
   func senderDidSendCommand(sender: IRSender, cmd: IRCommand) {
     animateSignal(cmd.userInfo as! UIColor)
+  }
+  
+  func senderDidFailToSendCommand(sender: IRSender, cmd: IRCommand) {
+    let centerY = self.view.bounds.height / 2
+    let startY = centerY - 76 / 2 - 60 - 76
+    let width:CGFloat = 192
+    label.frame = CGRectMake(self.view.bounds.width / 2 - width / 2, startY / 2 - 13, width, 26)
+    label.backgroundColor = UIColor.clearColor()
+    label.textColor = UIColor(red: 0.7608, green: 0.7608, blue: 0.7608, alpha: 0.5)
+    label.textAlignment = NSTextAlignment.Center
+    label.text = "You are not connected"
+    label.alpha = 1.0
+    self.view.addSubview(label)
+    
+    UIView.animateWithDuration(0.5,
+      delay: 0.85,
+      options: UIViewAnimationOptions.CurveEaseIn,
+      animations: {
+        self.label.alpha = 0.0
+      }) { (bool) -> Void in
+        if bool {
+          self.label.removeFromSuperview()
+        }
+    }
   }
 
 }

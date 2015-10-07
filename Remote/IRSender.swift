@@ -10,9 +10,11 @@ import Foundation
 
 protocol IRSenderDelegate {
   func senderDidSendCommand(sender:IRSender, cmd:IRCommand)
+  func senderDidFailToSendCommand(sender:IRSender, cmd:IRCommand)
 }
 
 class IRSender: NSObject, NSStreamDelegate {
+  private var ip:String = ""
   private var inputStream:NSInputStream!
   private var outputStream:NSOutputStream!
   private var currentId:Int = 0
@@ -25,7 +27,12 @@ class IRSender: NSObject, NSStreamDelegate {
     super.init()
   }
   
-  func connect(ip:String) {
+  convenience init(ip:String) {
+    self.init()
+    self.ip = ip
+  }
+  
+  func connect() {
     var readStream:Unmanaged<CFReadStream>?
     var writeStream:Unmanaged<CFWriteStream>?
     CFStreamCreatePairWithSocketToHost(nil, ip as NSString, 4998, &readStream, &writeStream)
@@ -72,10 +79,6 @@ class IRSender: NSObject, NSStreamDelegate {
     }
   }
   
-  override func observeValueForKeyPath(keyPath: String?, ofObject object: AnyObject?, change: [String : AnyObject]?, context: UnsafeMutablePointer<Void>) {
-    print(keyPath)
-  }
-  
   private func read() {
     var buffer = [UInt8](count: 4096, repeatedValue: 0)
     while (inputStream.hasBytesAvailable){
@@ -102,10 +105,6 @@ class IRSender: NSObject, NSStreamDelegate {
   }
   
   private func tryChannel(channel:Int) {
-    if !outputStream.hasSpaceAvailable {
-      return
-    }
-    
     if availableChannels[channel] == nil {
       availableChannels[channel] = true
     }
@@ -117,9 +116,16 @@ class IRSender: NSObject, NSStreamDelegate {
       return
     }
     
-    availableChannels[channel] = false
-    
     let cmd = queues[channel]?.removeAtIndex(0)
+
+    if !outputStream.hasSpaceAvailable {
+      delegate?.senderDidFailToSendCommand(self, cmd: cmd!)
+      // try to connect again
+      self.connect()
+      return
+    }
+
+    availableChannels[channel] = false
     
     currentId += 1
     print("\(NSDate().timeIntervalSince1970) >> send 1:\(cmd!.channel),\(self.currentId)")
