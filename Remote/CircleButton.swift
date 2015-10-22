@@ -14,10 +14,10 @@ class CircleButton: UIControl {
   var key: String = ""
   var mainColor: UIColor = UIColor.whiteColor()
 
-  init(frame: CGRect, key: String, color: UIColor, image: UIImage?) {
+  init(frame: CGRect, key: String, color: UIColor?, image: UIImage?) {
     super.init(frame: frame)
     
-    self.mainColor = color
+    self.mainColor = color ?? UIColor.whiteColor()
     self.key = key
     self.backgroundColor = self.mainColor
     self.layer.cornerRadius = frame.size.width / 2

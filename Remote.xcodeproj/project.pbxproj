@@ -8,6 +8,21 @@
 
 /* Begin PBXBuildFile section */
 		4C3902CB1BC3891B0005FF42 /* CircleButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C3902CA1BC3891B0005FF42 /* CircleButton.swift */; settings = {ASSET_TAGS = (); }; };
+		4C3B7B0C1BC8E9AD0073BFD1 /* IRCommand.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CE8A90F1B6748EE005E7566 /* IRCommand.swift */; };
+		4C3B7B0D1BC8E9AF0073BFD1 /* IRSender.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CE8A90C1B672FE3005E7566 /* IRSender.swift */; };
+		4C3B7B0F1BC8E9E40073BFD1 /* MVCommands.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C3B7B0E1BC8E9E40073BFD1 /* MVCommands.swift */; settings = {ASSET_TAGS = (); }; };
+		4C3B7B101BC8EB440073BFD1 /* MVCommands.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C3B7B0E1BC8E9E40073BFD1 /* MVCommands.swift */; };
+		4C3B7B121BC8EC2B0073BFD1 /* MVConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C3B7B111BC8EC2B0073BFD1 /* MVConstants.swift */; settings = {ASSET_TAGS = (); }; };
+		4C3B7B131BC8EC9D0073BFD1 /* MVConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C3B7B111BC8EC2B0073BFD1 /* MVConstants.swift */; };
+		4CBD48011BC7790D00EEB831 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CBD48001BC7790D00EEB831 /* AppDelegate.swift */; };
+		4CBD48031BC7790D00EEB831 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CBD48021BC7790D00EEB831 /* ViewController.swift */; };
+		4CBD48051BC7790D00EEB831 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4CBD48041BC7790D00EEB831 /* Assets.xcassets */; };
+		4CBD48081BC7790D00EEB831 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4CBD48061BC7790D00EEB831 /* Main.storyboard */; };
+		4CBD48121BC7791F00EEB831 /* NotificationCenter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4CBD47BA1BC76AF700EEB831 /* NotificationCenter.framework */; settings = {ASSET_TAGS = (); }; };
+		4CBD48171BC7791F00EEB831 /* TodayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CBD48161BC7791F00EEB831 /* TodayViewController.swift */; };
+		4CBD481A1BC7791F00EEB831 /* TodayViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4CBD48181BC7791F00EEB831 /* TodayViewController.xib */; };
+		4CBD481E1BC7791F00EEB831 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 4CBD481C1BC7791F00EEB831 /* InfoPlist.strings */; };
+		4CBD48211BC7791F00EEB831 /* RemoteTodayExtension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 4CBD48111BC7791F00EEB831 /* RemoteTodayExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		4CE8A90D1B672FE3005E7566 /* IRSender.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CE8A90C1B672FE3005E7566 /* IRSender.swift */; };
 		4CE8A9101B6748EE005E7566 /* IRCommand.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CE8A90F1B6748EE005E7566 /* IRCommand.swift */; };
 		4CF58D871B6466DA004D3E5E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CF58D861B6466DA004D3E5E /* AppDelegate.swift */; };
@@ -15,10 +30,49 @@
 		4CF58D8E1B6466DA004D3E5E /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4CF58D8D1B6466DA004D3E5E /* Images.xcassets */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		4CBD481F1BC7791F00EEB831 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 4CF58D791B6466DA004D3E5E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 4CBD48101BC7791F00EEB831;
+			remoteInfo = RemoteTodayExtension;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		4CBD48251BC7791F00EEB831 /* Embed App Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				4CBD48211BC7791F00EEB831 /* RemoteTodayExtension.appex in Embed App Extensions */,
+			);
+			name = "Embed App Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
 		4C3902CA1BC3891B0005FF42 /* CircleButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CircleButton.swift; sourceTree = "<group>"; };
-		4CE8A90C1B672FE3005E7566 /* IRSender.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IRSender.swift; sourceTree = "<group>"; };
-		4CE8A90F1B6748EE005E7566 /* IRCommand.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IRCommand.swift; sourceTree = "<group>"; };
+		4C3B7B0E1BC8E9E40073BFD1 /* MVCommands.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MVCommands.swift; path = Remote/MVCommands.swift; sourceTree = "<group>"; };
+		4C3B7B111BC8EC2B0073BFD1 /* MVConstants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MVConstants.swift; sourceTree = "<group>"; };
+		4CBD47BA1BC76AF700EEB831 /* NotificationCenter.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = NotificationCenter.framework; path = System/Library/Frameworks/NotificationCenter.framework; sourceTree = SDKROOT; };
+		4CBD47FE1BC7790D00EEB831 /* RemoteOSX.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RemoteOSX.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		4CBD48001BC7790D00EEB831 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		4CBD48021BC7790D00EEB831 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		4CBD48041BC7790D00EEB831 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		4CBD48071BC7790D00EEB831 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		4CBD48091BC7790D00EEB831 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		4CBD48111BC7791F00EEB831 /* RemoteTodayExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = RemoteTodayExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		4CBD48151BC7791F00EEB831 /* RemoteTodayExtension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = RemoteTodayExtension.entitlements; sourceTree = "<group>"; };
+		4CBD48161BC7791F00EEB831 /* TodayViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodayViewController.swift; sourceTree = "<group>"; };
+		4CBD48191BC7791F00EEB831 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/TodayViewController.xib; sourceTree = "<group>"; };
+		4CBD481B1BC7791F00EEB831 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		4CBD481D1BC7791F00EEB831 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		4CE8A90C1B672FE3005E7566 /* IRSender.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = IRSender.swift; path = Remote/IRSender.swift; sourceTree = "<group>"; };
+		4CE8A90F1B6748EE005E7566 /* IRCommand.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = IRCommand.swift; path = Remote/IRCommand.swift; sourceTree = "<group>"; };
 		4CF58D811B6466DA004D3E5E /* Remote.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Remote.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4CF58D851B6466DA004D3E5E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4CF58D861B6466DA004D3E5E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -28,6 +82,21 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		4CBD47FB1BC7790D00EEB831 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		4CBD480E1BC7791F00EEB831 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4CBD48121BC7791F00EEB831 /* NotificationCenter.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		4CF58D7E1B6466DA004D3E5E /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -38,10 +107,65 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		4C3B7B0B1BC8E9900073BFD1 /* lib */ = {
+			isa = PBXGroup;
+			children = (
+				4CE8A90C1B672FE3005E7566 /* IRSender.swift */,
+				4CE8A90F1B6748EE005E7566 /* IRCommand.swift */,
+				4C3B7B0E1BC8E9E40073BFD1 /* MVCommands.swift */,
+				4C3B7B111BC8EC2B0073BFD1 /* MVConstants.swift */,
+			);
+			name = lib;
+			sourceTree = "<group>";
+		};
+		4CBD47B91BC76AF700EEB831 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				4CBD47BA1BC76AF700EEB831 /* NotificationCenter.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		4CBD47FF1BC7790D00EEB831 /* RemoteOSX */ = {
+			isa = PBXGroup;
+			children = (
+				4CBD48001BC7790D00EEB831 /* AppDelegate.swift */,
+				4CBD48021BC7790D00EEB831 /* ViewController.swift */,
+				4CBD48041BC7790D00EEB831 /* Assets.xcassets */,
+				4CBD48061BC7790D00EEB831 /* Main.storyboard */,
+				4CBD48091BC7790D00EEB831 /* Info.plist */,
+			);
+			path = RemoteOSX;
+			sourceTree = "<group>";
+		};
+		4CBD48131BC7791F00EEB831 /* RemoteTodayExtension */ = {
+			isa = PBXGroup;
+			children = (
+				4CBD48161BC7791F00EEB831 /* TodayViewController.swift */,
+				4CBD48181BC7791F00EEB831 /* TodayViewController.xib */,
+				4CBD481B1BC7791F00EEB831 /* Info.plist */,
+				4CBD481C1BC7791F00EEB831 /* InfoPlist.strings */,
+				4CBD48141BC7791F00EEB831 /* Supporting Files */,
+			);
+			path = RemoteTodayExtension;
+			sourceTree = "<group>";
+		};
+		4CBD48141BC7791F00EEB831 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				4CBD48151BC7791F00EEB831 /* RemoteTodayExtension.entitlements */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
 		4CF58D781B6466DA004D3E5E = {
 			isa = PBXGroup;
 			children = (
+				4C3B7B0B1BC8E9900073BFD1 /* lib */,
 				4CF58D831B6466DA004D3E5E /* Remote */,
+				4CBD47FF1BC7790D00EEB831 /* RemoteOSX */,
+				4CBD48131BC7791F00EEB831 /* RemoteTodayExtension */,
+				4CBD47B91BC76AF700EEB831 /* Frameworks */,
 				4CF58D821B6466DA004D3E5E /* Products */,
 			);
 			sourceTree = "<group>";
@@ -50,6 +174,8 @@
 			isa = PBXGroup;
 			children = (
 				4CF58D811B6466DA004D3E5E /* Remote.app */,
+				4CBD47FE1BC7790D00EEB831 /* RemoteOSX.app */,
+				4CBD48111BC7791F00EEB831 /* RemoteTodayExtension.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -59,8 +185,6 @@
 			children = (
 				4CF58D861B6466DA004D3E5E /* AppDelegate.swift */,
 				4CF58D881B6466DA004D3E5E /* ViewController.swift */,
-				4CE8A90C1B672FE3005E7566 /* IRSender.swift */,
-				4CE8A90F1B6748EE005E7566 /* IRCommand.swift */,
 				4C3902CA1BC3891B0005FF42 /* CircleButton.swift */,
 				4CF58D8D1B6466DA004D3E5E /* Images.xcassets */,
 				4CF58D841B6466DA004D3E5E /* Supporting Files */,
@@ -90,6 +214,42 @@
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
+		4CBD47FD1BC7790D00EEB831 /* RemoteOSX */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 4CBD480A1BC7790D00EEB831 /* Build configuration list for PBXNativeTarget "RemoteOSX" */;
+			buildPhases = (
+				4CBD47FA1BC7790D00EEB831 /* Sources */,
+				4CBD47FB1BC7790D00EEB831 /* Frameworks */,
+				4CBD47FC1BC7790D00EEB831 /* Resources */,
+				4CBD48251BC7791F00EEB831 /* Embed App Extensions */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				4CBD48201BC7791F00EEB831 /* PBXTargetDependency */,
+			);
+			name = RemoteOSX;
+			productName = RemoteOSX;
+			productReference = 4CBD47FE1BC7790D00EEB831 /* RemoteOSX.app */;
+			productType = "com.apple.product-type.application";
+		};
+		4CBD48101BC7791F00EEB831 /* RemoteTodayExtension */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 4CBD48221BC7791F00EEB831 /* Build configuration list for PBXNativeTarget "RemoteTodayExtension" */;
+			buildPhases = (
+				4CBD480D1BC7791F00EEB831 /* Sources */,
+				4CBD480E1BC7791F00EEB831 /* Frameworks */,
+				4CBD480F1BC7791F00EEB831 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = RemoteTodayExtension;
+			productName = RemoteTodayExtension;
+			productReference = 4CBD48111BC7791F00EEB831 /* RemoteTodayExtension.appex */;
+			productType = "com.apple.product-type.app-extension";
+		};
 		4CF58D801B6466DA004D3E5E /* Remote */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 4CF58DA01B6466DA004D3E5E /* Build configuration list for PBXNativeTarget "Remote" */;
@@ -119,6 +279,12 @@
 				LastUpgradeCheck = 0700;
 				ORGANIZATIONNAME = michaelvillar;
 				TargetAttributes = {
+					4CBD47FD1BC7790D00EEB831 = {
+						CreatedOnToolsVersion = 7.0.1;
+					};
+					4CBD48101BC7791F00EEB831 = {
+						CreatedOnToolsVersion = 7.0.1;
+					};
 					4CF58D801B6466DA004D3E5E = {
 						CreatedOnToolsVersion = 6.4;
 						DevelopmentTeam = H9MWYLG8FW;
@@ -139,11 +305,31 @@
 			projectRoot = "";
 			targets = (
 				4CF58D801B6466DA004D3E5E /* Remote */,
+				4CBD47FD1BC7790D00EEB831 /* RemoteOSX */,
+				4CBD48101BC7791F00EEB831 /* RemoteTodayExtension */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		4CBD47FC1BC7790D00EEB831 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4CBD48051BC7790D00EEB831 /* Assets.xcassets in Resources */,
+				4CBD48081BC7790D00EEB831 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		4CBD480F1BC7791F00EEB831 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4CBD481A1BC7791F00EEB831 /* TodayViewController.xib in Resources */,
+				4CBD481E1BC7791F00EEB831 /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		4CF58D7F1B6466DA004D3E5E /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -155,12 +341,35 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		4CBD47FA1BC7790D00EEB831 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4CBD48031BC7790D00EEB831 /* ViewController.swift in Sources */,
+				4CBD48011BC7790D00EEB831 /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		4CBD480D1BC7791F00EEB831 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4CBD48171BC7791F00EEB831 /* TodayViewController.swift in Sources */,
+				4C3B7B0C1BC8E9AD0073BFD1 /* IRCommand.swift in Sources */,
+				4C3B7B0D1BC8E9AF0073BFD1 /* IRSender.swift in Sources */,
+				4C3B7B101BC8EB440073BFD1 /* MVCommands.swift in Sources */,
+				4C3B7B131BC8EC9D0073BFD1 /* MVConstants.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		4CF58D7D1B6466DA004D3E5E /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4C3B7B0F1BC8E9E40073BFD1 /* MVCommands.swift in Sources */,
 				4CE8A9101B6748EE005E7566 /* IRCommand.swift in Sources */,
 				4C3902CB1BC3891B0005FF42 /* CircleButton.swift in Sources */,
+				4C3B7B121BC8EC2B0073BFD1 /* MVConstants.swift in Sources */,
 				4CF58D891B6466DA004D3E5E /* ViewController.swift in Sources */,
 				4CE8A90D1B672FE3005E7566 /* IRSender.swift in Sources */,
 				4CF58D871B6466DA004D3E5E /* AppDelegate.swift in Sources */,
@@ -169,7 +378,108 @@
 		};
 /* End PBXSourcesBuildPhase section */
 
+/* Begin PBXTargetDependency section */
+		4CBD48201BC7791F00EEB831 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 4CBD48101BC7791F00EEB831 /* RemoteTodayExtension */;
+			targetProxy = 4CBD481F1BC7791F00EEB831 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		4CBD48061BC7790D00EEB831 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				4CBD48071BC7790D00EEB831 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		4CBD48181BC7791F00EEB831 /* TodayViewController.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				4CBD48191BC7791F00EEB831 /* Base */,
+			);
+			name = TodayViewController.xib;
+			sourceTree = "<group>";
+		};
+		4CBD481C1BC7791F00EEB831 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				4CBD481D1BC7791F00EEB831 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
 /* Begin XCBuildConfiguration section */
+		4CBD480B1BC7790D00EEB831 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "-";
+				COMBINE_HIDPI_IMAGES = YES;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
+				INFOPLIST_FILE = RemoteOSX/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 10.10;
+				PRODUCT_BUNDLE_IDENTIFIER = com.michaelvillar.RemoteOSX;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+			};
+			name = Debug;
+		};
+		4CBD480C1BC7790D00EEB831 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "-";
+				COMBINE_HIDPI_IMAGES = YES;
+				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
+				INFOPLIST_FILE = RemoteOSX/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 10.10;
+				PRODUCT_BUNDLE_IDENTIFIER = com.michaelvillar.RemoteOSX;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+			};
+			name = Release;
+		};
+		4CBD48231BC7791F00EEB831 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = RemoteTodayExtension/RemoteTodayExtension.entitlements;
+				CODE_SIGN_IDENTITY = "-";
+				COMBINE_HIDPI_IMAGES = YES;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				INFOPLIST_FILE = RemoteTodayExtension/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @executable_path/../../../../Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 10.10;
+				PRODUCT_BUNDLE_IDENTIFIER = com.michaelvillar.RemoteOSX.RemoteTodayExtension;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+				SKIP_INSTALL = YES;
+			};
+			name = Debug;
+		};
+		4CBD48241BC7791F00EEB831 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = RemoteTodayExtension/RemoteTodayExtension.entitlements;
+				CODE_SIGN_IDENTITY = "-";
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = RemoteTodayExtension/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @executable_path/../../../../Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 10.10;
+				PRODUCT_BUNDLE_IDENTIFIER = com.michaelvillar.RemoteOSX.RemoteTodayExtension;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+				SKIP_INSTALL = YES;
+			};
+			name = Release;
+		};
 		4CF58D9E1B6466DA004D3E5E /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -290,6 +600,24 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		4CBD480A1BC7790D00EEB831 /* Build configuration list for PBXNativeTarget "RemoteOSX" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				4CBD480B1BC7790D00EEB831 /* Debug */,
+				4CBD480C1BC7790D00EEB831 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		4CBD48221BC7791F00EEB831 /* Build configuration list for PBXNativeTarget "RemoteTodayExtension" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				4CBD48231BC7791F00EEB831 /* Debug */,
+				4CBD48241BC7791F00EEB831 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		4CF58D7C1B6466DA004D3E5E /* Build configuration list for PBXProject "Remote" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (

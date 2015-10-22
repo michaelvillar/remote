@@ -19,4 +19,8 @@ class IRCommand : NSObject {
     self.cmd = cmd
     self.userInfo = userInfo
   }
+  
+  convenience init(channel:Int, cmd:String) {
+    self.init(channel: channel, cmd: cmd, userInfo: nil)
+  }
 }
