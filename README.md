@@ -3,10 +3,12 @@ Command your TV, Apple TV or Receiver with your Mac/iOS device through iTach.
 
 # Screenshots
 On iOS:
-![iOS](/screenshots/ios.png?raw=tru)
+
+<img src="/screenshots/ios.png?raw=tru" width="250">
 
 On Mac (notification center):
-![Mac](/screenshots/mac-extension.png?raw=tru)
+
+<img src="/screenshots/mac-extension.png?raw=tru" width="250">
 
 # How to use
 - Buy a iTach:
