@@ -5,7 +5,7 @@
 	<key>CFBundleDevelopmentRegion</key>
 	<string>en</string>
 	<key>CFBundleDisplayName</key>
-	<string>RemoteTodayExtension</string>
+	<string>Remote</string>
 	<key>CFBundleExecutable</key>
 	<string>$(EXECUTABLE_NAME)</string>
 	<key>CFBundleIdentifier</key>
@@ -13,7 +13,7 @@
 	<key>CFBundleInfoDictionaryVersion</key>
 	<string>6.0</string>
 	<key>CFBundleName</key>
-	<string>$(PRODUCT_NAME)</string>
+	<string>Remote</string>
 	<key>CFBundlePackageType</key>
 	<string>XPC!</string>
 	<key>CFBundleShortVersionString</key>
@@ -31,7 +31,7 @@
 		<key>NSExtensionPrincipalClass</key>
 		<string>$(PRODUCT_MODULE_NAME).TodayViewController</string>
 		<key>com.apple.notificationcenter.widget.description</key>
-		<string>RemoteTodayExtension</string>
+		<string>Remote</string>
 	</dict>
 	<key>NSHumanReadableCopyright</key>
 	<string>Copyright © 2015 michaelvillar. All rights reserved.</string>

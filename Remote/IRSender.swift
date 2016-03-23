@@ -70,6 +70,7 @@ class IRSender: NSObject, NSStreamDelegate {
       break
     case NSStreamEvent.ErrorOccurred:
       print("error")
+      print(stream.streamError)
       break
     case NSStreamEvent.HasSpaceAvailable:
       print("space available")
