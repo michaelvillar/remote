@@ -23,7 +23,6 @@
 		4CBD48121BC7791F00EEB831 /* NotificationCenter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4CBD47BA1BC76AF700EEB831 /* NotificationCenter.framework */; };
 		4CBD48171BC7791F00EEB831 /* TodayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CBD48161BC7791F00EEB831 /* TodayViewController.swift */; };
 		4CBD481A1BC7791F00EEB831 /* TodayViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4CBD48181BC7791F00EEB831 /* TodayViewController.xib */; };
-		4CBD481E1BC7791F00EEB831 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 4CBD481C1BC7791F00EEB831 /* InfoPlist.strings */; };
 		4CBD48211BC7791F00EEB831 /* RemoteTodayExtension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 4CBD48111BC7791F00EEB831 /* RemoteTodayExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		4CE8A90D1B672FE3005E7566 /* IRSender.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CE8A90C1B672FE3005E7566 /* IRSender.swift */; };
 		4CE8A9101B6748EE005E7566 /* IRCommand.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CE8A90F1B6748EE005E7566 /* IRCommand.swift */; };
@@ -73,7 +72,6 @@
 		4CBD48161BC7791F00EEB831 /* TodayViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodayViewController.swift; sourceTree = "<group>"; };
 		4CBD48191BC7791F00EEB831 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/TodayViewController.xib; sourceTree = "<group>"; };
 		4CBD481B1BC7791F00EEB831 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		4CBD481D1BC7791F00EEB831 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		4CE8A90C1B672FE3005E7566 /* IRSender.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = IRSender.swift; path = Remote/IRSender.swift; sourceTree = "<group>"; };
 		4CE8A90F1B6748EE005E7566 /* IRCommand.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = IRCommand.swift; path = Remote/IRCommand.swift; sourceTree = "<group>"; };
 		4CF58D811B6466DA004D3E5E /* Remote.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Remote.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -148,7 +146,6 @@
 				4C6BD3151CA27310000C0FAF /* CircleButton.swift */,
 				4CBD48181BC7791F00EEB831 /* TodayViewController.xib */,
 				4CBD481B1BC7791F00EEB831 /* Info.plist */,
-				4CBD481C1BC7791F00EEB831 /* InfoPlist.strings */,
 				4CBD48141BC7791F00EEB831 /* Supporting Files */,
 			);
 			path = RemoteTodayExtension;
@@ -330,7 +327,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				4CBD481A1BC7791F00EEB831 /* TodayViewController.xib in Resources */,
-				4CBD481E1BC7791F00EEB831 /* InfoPlist.strings in Resources */,
 				4C6BD3171CA27406000C0FAF /* Images.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -407,14 +403,6 @@
 				4CBD48191BC7791F00EEB831 /* Base */,
 			);
 			name = TodayViewController.xib;
-			sourceTree = "<group>";
-		};
-		4CBD481C1BC7791F00EEB831 /* InfoPlist.strings */ = {
-			isa = PBXVariantGroup;
-			children = (
-				4CBD481D1BC7791F00EEB831 /* en */,
-			);
-			name = InfoPlist.strings;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
