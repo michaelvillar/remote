@@ -13,6 +13,15 @@ class CircleButton: UIControl {
   var imageView: UIImageView!
   var key: String = ""
   var mainColor: UIColor = UIColor.whiteColor()
+  
+  var image: UIImage? {
+    didSet {
+      dispatch_async(dispatch_get_main_queue()) { 
+        self.imageView.image = self.image
+        self.imageView.setNeedsDisplay()
+      }
+    }
+  }
 
   init(frame: CGRect, key: String, color: UIColor?, image: UIImage?) {
     super.init(frame: frame)
@@ -24,6 +33,7 @@ class CircleButton: UIControl {
     self.clipsToBounds = false
     
     imageView = UIImageView(image: image)
+    self.image = image
     imageView.frame = self.bounds
     self.addSubview(imageView)
     

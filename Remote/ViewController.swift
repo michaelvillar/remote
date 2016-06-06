@@ -20,6 +20,8 @@ class ViewController: UIViewController, UIGestureRecognizerDelegate, IRSenderDel
   private var colorsForKeys:[String:UIColor] = [String:UIColor]()
   private let sender:IRSender!
   private let label:UILabel = UILabel(frame: CGRectZero)
+  private var lightButton:CircleButton?
+  private var allLights:LightTarget?
   
   override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: NSBundle?) {
     self.sender = IRSender(ip: MVHost)
@@ -128,6 +130,7 @@ class ViewController: UIViewController, UIGestureRecognizerDelegate, IRSenderDel
     )
     light.addTarget(self, action: #selector(toggleLight), forControlEvents: UIControlEvents.TouchUpInside);
     self.view.addSubview(light)
+    lightButton = light
     
     let light_color = CircleButton(
       frame: CGRectMake(startX + buttonSize + horizontalSpacing, startY + (buttonSize + verticalSpacing) * 3, buttonSize, buttonSize),
@@ -144,7 +147,10 @@ class ViewController: UIViewController, UIGestureRecognizerDelegate, IRSenderDel
   }
   
   func getLights(callback:((LightTarget) -> ())) {
-    animateSignal(yellowColor)
+    if (self.allLights != nil) {
+      return callback(self.allLights!)
+    }
+
     let client = Client(accessToken: MVLIFXKey)
     client.fetch() { (error) in
       if (error.count > 0) {
@@ -154,6 +160,7 @@ class ViewController: UIViewController, UIGestureRecognizerDelegate, IRSenderDel
         if (all.count <= 0) {
           self.displayError("Couldn't find any light")
         } else {
+          self.allLights = all
           callback(all)
         }
       }
@@ -161,8 +168,10 @@ class ViewController: UIViewController, UIGestureRecognizerDelegate, IRSenderDel
   }
   
   func toggleLight() {
+    animateSignal(yellowColor)
     getLights { (all) in
       if let lightTarget = all.toLightTargets().first {
+        self.updateLightButton(!lightTarget.power)
         all.setPower(!lightTarget.power)
       }
     }
@@ -172,6 +181,7 @@ class ViewController: UIViewController, UIGestureRecognizerDelegate, IRSenderDel
     let hue = Double(Float(arc4random()) / Float(UINT32_MAX))  * 360
     let saturation = Double(Float(arc4random()) / Float(UINT32_MAX)) * 60 / 100
     let color = Color(hue: hue, saturation: saturation, kelvin: 3500)
+    animateSignal(yellowColor)
     getLights { (all) in
       all.setState(color, brightness: 1.0, power: true, duration: 0.5, completionHandler: { (results, error) in
         if (error != nil) {
@@ -183,6 +193,18 @@ class ViewController: UIViewController, UIGestureRecognizerDelegate, IRSenderDel
   
   func reconnect() {
     self.sender.connect()
+    
+    getLights { (all) in
+      self.updateLightButton(all.power)
+    }
+  }
+  
+  private func updateLightButton(power:Bool) {
+    if (power) {
+      lightButton?.image = UIImage(named: "light")
+    } else {
+      lightButton?.image = UIImage(named: "light_off")
+    }
   }
   
   override func prefersStatusBarHidden() -> Bool {
