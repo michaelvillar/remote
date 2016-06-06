@@ -1,0 +1,10 @@
+framework module LIFXHTTPKit {
+  umbrella header "LIFXHTTPKit.h"
+
+  export *
+  module * { export * }
+}
+
+module LIFXHTTPKit.Swift {
+    header "LIFXHTTPKit-Swift.h"
+}

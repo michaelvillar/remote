@@ -27,7 +27,7 @@ class CircleButton: UIControl {
     imageView.frame = self.bounds
     self.addSubview(imageView)
     
-    self.addTarget(self, action: "handleTouch:", forControlEvents: UIControlEvents.TouchUpInside)
+    self.addTarget(self, action: #selector(handleTouch), forControlEvents: UIControlEvents.TouchUpInside)
   }
 
   required init?(coder aDecoder: NSCoder) {

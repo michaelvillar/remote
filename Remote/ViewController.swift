@@ -7,11 +7,13 @@
 //
 
 import UIKit
+import LIFXHTTPKit
 
 private let greenColor:UIColor = UIColor(red: 0.3137, green: 0.7608, blue: 0.2667, alpha: 1.0)
 private let redColor:UIColor = UIColor(red: 0.7687, green: 0.2616, blue: 0.2538, alpha: 1.0)
 private let purpleColor:UIColor = UIColor(red: 0.4493, green: 0.2424, blue: 0.7719, alpha: 1.0)
 private let grayColor:UIColor = UIColor(red: 0.7608, green: 0.7609, blue: 0.7608, alpha: 1.0)
+private let yellowColor:UIColor = UIColor(red: 0.8436, green: 0.692, blue: 0.0, alpha: 1.0)
 
 class ViewController: UIViewController, UIGestureRecognizerDelegate, IRSenderDelegate {
   
@@ -30,6 +32,7 @@ class ViewController: UIViewController, UIGestureRecognizerDelegate, IRSenderDel
     self.colorsForKeys["volume_down"] = purpleColor
     self.colorsForKeys["input_apple"] = grayColor
     self.colorsForKeys["input_wii"] = grayColor
+    self.colorsForKeys["light"] = yellowColor
     
     for (key, commands) in MVCommands {
       for command in commands {
@@ -50,69 +53,103 @@ class ViewController: UIViewController, UIGestureRecognizerDelegate, IRSenderDel
     
     self.view.backgroundColor = UIColor.blackColor()
     
+    let rows:CGFloat = 4
+    let buttonSize:CGFloat = 76
+    
+    let horizontalSpacing:CGFloat = 40
+    let verticalSpacing:CGFloat = 60
+    
     let centerX = self.view.bounds.width / 2
-    let startX = centerX - 20 - 76
+    let startX = centerX - 20 - buttonSize
     
     let centerY = self.view.bounds.height / 2
-    let startY = centerY - 76 / 2 - 60 - 76
+    let startY = centerY - ((rows - 1) * verticalSpacing + rows * buttonSize) / 2
     
     let power_on = CircleButton(
-      frame: CGRectMake(startX, startY, 76, 76),
+      frame: CGRectMake(startX, startY, buttonSize, buttonSize),
       key: "power_on",
       color: self.colorsForKeys["power_on"],
       image: UIImage(named: "power_on")
     )
-    power_on.addTarget(self, action: "handleButton:", forControlEvents: UIControlEvents.TouchUpInside);
+    power_on.addTarget(self, action: #selector(handleButton), forControlEvents: UIControlEvents.TouchUpInside);
     self.view.addSubview(power_on)
     
     let power_off = CircleButton(
-      frame: CGRectMake(startX + 76 + 40, startY, 76, 76),
+      frame: CGRectMake(startX + buttonSize + horizontalSpacing, startY, buttonSize, buttonSize),
       key: "power_off",
       color: self.colorsForKeys["power_off"],
       image: UIImage(named: "power_off")
     )
-    power_off.addTarget(self, action: "handleButton:", forControlEvents: UIControlEvents.TouchUpInside);
+    power_off.addTarget(self, action: #selector(handleButton), forControlEvents: UIControlEvents.TouchUpInside);
     self.view.addSubview(power_off)
     
     let input_apple = CircleButton(
-      frame: CGRectMake(startX, startY + (76 + 60) * 1, 76, 76),
+      frame: CGRectMake(startX, startY + (buttonSize + verticalSpacing) * 1, buttonSize, buttonSize),
       key: "input_apple",
       color: self.colorsForKeys["input_apple"],
       image: UIImage(named: "input_apple")
     )
-    input_apple.addTarget(self, action: "handleButton:", forControlEvents: UIControlEvents.TouchUpInside);
+    input_apple.addTarget(self, action: #selector(handleButton), forControlEvents: UIControlEvents.TouchUpInside);
     self.view.addSubview(input_apple)
     
     let input_wii = CircleButton(
-      frame: CGRectMake(startX + 76 + 40, startY + (76 + 60) * 1, 76, 76),
+      frame: CGRectMake(startX + buttonSize + horizontalSpacing, startY + (buttonSize + verticalSpacing) * 1, buttonSize, buttonSize),
       key: "input_wii",
       color: self.colorsForKeys["input_wii"],
       image: UIImage(named: "input_wii")
     )
-    input_wii.addTarget(self, action: "handleButton:", forControlEvents: UIControlEvents.TouchUpInside);
+    input_wii.addTarget(self, action: #selector(handleButton), forControlEvents: UIControlEvents.TouchUpInside);
     self.view.addSubview(input_wii)
     
     let volume_down = CircleButton(
-      frame: CGRectMake(startX, startY + (76 + 60) * 2, 76, 76),
+      frame: CGRectMake(startX, startY + (buttonSize + verticalSpacing) * 2, buttonSize, buttonSize),
       key: "volume_down",
       color: self.colorsForKeys["volume_down"],
       image: UIImage(named: "volume_down")
     )
-    volume_down.addTarget(self, action: "handleButton:", forControlEvents: UIControlEvents.TouchUpInside);
+    volume_down.addTarget(self, action: #selector(handleButton), forControlEvents: UIControlEvents.TouchUpInside);
     self.view.addSubview(volume_down)
     
     let volume_up = CircleButton(
-      frame: CGRectMake(startX + 76 + 40, startY + (76 + 60) * 2, 76, 76),
+      frame: CGRectMake(startX + buttonSize + horizontalSpacing, startY + (buttonSize + verticalSpacing) * 2, buttonSize, buttonSize),
       key: "volume_up",
       color: self.colorsForKeys["volume_up"],
       image: UIImage(named: "volume_up")
     )
-    volume_up.addTarget(self, action: "handleButton:", forControlEvents: UIControlEvents.TouchUpInside);
+    volume_up.addTarget(self, action: #selector(handleButton), forControlEvents: UIControlEvents.TouchUpInside);
     self.view.addSubview(volume_up)
+    
+    let light = CircleButton(
+      frame: CGRectMake(startX, startY + (buttonSize + verticalSpacing) * 3, buttonSize, buttonSize),
+      key: "light",
+      color: self.colorsForKeys["light"],
+      image: UIImage(named: "light")
+    )
+    light.addTarget(self, action: #selector(toggleLight), forControlEvents: UIControlEvents.TouchUpInside);
+    self.view.addSubview(light)
   }
   
   func handleButton(button:CircleButton) {
     sendCommand(button.key)
+  }
+  
+  func toggleLight() {
+    animateSignal(yellowColor)
+    let client = Client(accessToken: MVLIFXKey)
+    client.fetch() { (error) in
+      if (error.count > 0) {
+        self.displayError(error[0].description)
+      } else {
+        let all = client.allLightTarget()
+        if (all.count <= 0) {
+          self.displayError("Couldn't find any light")
+        } else {
+          if let lightTarget = all.toLightTargets().first {
+            all.setPower(!lightTarget.power)
+          }
+        }
+      }
+    }
   }
   
   func reconnect() {
@@ -132,8 +169,7 @@ class ViewController: UIViewController, UIGestureRecognizerDelegate, IRSenderDel
   }
   
   private func animateSignal(color: UIColor) {
-    let centerY = self.view.bounds.height / 2
-    let startY = centerY - 76 / 2 - 60 - 76
+    let startY = self.view.subviews[0].frame.origin.y
     let width:CGFloat = 192
     
     let signalView = UIView(frame: CGRectMake(self.view.bounds.width / 2 - width / 2, startY / 2 - 1, width, 2))
@@ -159,14 +195,8 @@ class ViewController: UIViewController, UIGestureRecognizerDelegate, IRSenderDel
     }
   }
   
-  // IRSenderDelegate
-  func senderDidSendCommand(sender: IRSender, cmd: IRCommand) {
-    animateSignal(cmd.userInfo as! UIColor)
-  }
-  
-  func senderDidFailToSendCommand(sender: IRSender, cmd: IRCommand) {
-    let centerY = self.view.bounds.height / 2
-    let startY = centerY - 76 / 2 - 60 - 76
+  private func displayError(error: String) {
+    let startY = self.view.subviews[0].frame.origin.y
     let width:CGFloat = 192
     label.frame = CGRectMake(self.view.bounds.width / 2 - width / 2, startY / 2 - 13, width, 26)
     label.backgroundColor = UIColor.clearColor()
@@ -177,15 +207,24 @@ class ViewController: UIViewController, UIGestureRecognizerDelegate, IRSenderDel
     self.view.addSubview(label)
     
     UIView.animateWithDuration(0.5,
-      delay: 0.85,
-      options: UIViewAnimationOptions.CurveEaseIn,
-      animations: {
-        self.label.alpha = 0.0
-      }) { (bool) -> Void in
-        if bool {
-          self.label.removeFromSuperview()
-        }
+                               delay: 0.85,
+                               options: UIViewAnimationOptions.CurveEaseIn,
+                               animations: {
+                                self.label.alpha = 0.0
+    }) { (bool) -> Void in
+      if bool {
+        self.label.removeFromSuperview()
+      }
     }
+  }
+  
+  // IRSenderDelegate
+  func senderDidSendCommand(sender: IRSender, cmd: IRCommand) {
+    animateSignal(cmd.userInfo as! UIColor)
+  }
+  
+  func senderDidFailToSendCommand(sender: IRSender, cmd: IRCommand) {
+    displayError("You are not connected")
   }
 
 }

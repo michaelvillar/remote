@@ -1,0 +1,1 @@
+let MVLIFXKey = "<insert your LIFX key>"
