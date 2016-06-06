@@ -17,3 +17,7 @@ On Mac (notification center):
 - Change the IP of your iTach in `MVConstants.swift`
 - Change the IR commands in `MVCommands.swift`
 - Change your Lifx key in `MVKeys.swift`
+- Dependencies with Carthage
+  - `brew install carthage`
+  - `carthage update`
+  - `carthage build`
