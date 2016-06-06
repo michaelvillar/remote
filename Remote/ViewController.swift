@@ -33,6 +33,7 @@ class ViewController: UIViewController, UIGestureRecognizerDelegate, IRSenderDel
     self.colorsForKeys["input_apple"] = grayColor
     self.colorsForKeys["input_wii"] = grayColor
     self.colorsForKeys["light"] = yellowColor
+    self.colorsForKeys["light_color"] = yellowColor
     
     for (key, commands) in MVCommands {
       for command in commands {
@@ -127,13 +128,22 @@ class ViewController: UIViewController, UIGestureRecognizerDelegate, IRSenderDel
     )
     light.addTarget(self, action: #selector(toggleLight), forControlEvents: UIControlEvents.TouchUpInside);
     self.view.addSubview(light)
+    
+    let light_color = CircleButton(
+      frame: CGRectMake(startX + buttonSize + horizontalSpacing, startY + (buttonSize + verticalSpacing) * 3, buttonSize, buttonSize),
+      key: "light_color",
+      color: self.colorsForKeys["light_color"],
+      image: UIImage(named: "light_color")
+    )
+    light_color.addTarget(self, action: #selector(randomLightColor), forControlEvents: UIControlEvents.TouchUpInside);
+    self.view.addSubview(light_color)
   }
   
   func handleButton(button:CircleButton) {
     sendCommand(button.key)
   }
   
-  func toggleLight() {
+  func getLights(callback:((LightTarget) -> ())) {
     animateSignal(yellowColor)
     let client = Client(accessToken: MVLIFXKey)
     client.fetch() { (error) in
@@ -144,11 +154,30 @@ class ViewController: UIViewController, UIGestureRecognizerDelegate, IRSenderDel
         if (all.count <= 0) {
           self.displayError("Couldn't find any light")
         } else {
-          if let lightTarget = all.toLightTargets().first {
-            all.setPower(!lightTarget.power)
-          }
+          callback(all)
         }
       }
+    }
+  }
+  
+  func toggleLight() {
+    getLights { (all) in
+      if let lightTarget = all.toLightTargets().first {
+        all.setPower(!lightTarget.power)
+      }
+    }
+  }
+  
+  func randomLightColor() {
+    let hue = Double(Float(arc4random()) / Float(UINT32_MAX))  * 360
+    let saturation = Double(Float(arc4random()) / Float(UINT32_MAX)) * 60 / 100
+    let color = Color(hue: hue, saturation: saturation, kelvin: 3500)
+    getLights { (all) in
+      all.setState(color, brightness: 1.0, power: true, duration: 0.5, completionHandler: { (results, error) in
+        if (error != nil) {
+          self.displayError(error?.description ?? "Couldn't change the color")
+        }
+      })
     }
   }
   
