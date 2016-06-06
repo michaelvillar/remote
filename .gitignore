@@ -1,1 +1,5 @@
-MVKeys.swift
+Carthage/
+Cartfile.resolved
+Remote.xcodeproj/project.xcworkspace/xcuserdata/
+Remote.xcodeproj/xcuserdata/
+.DS_Store

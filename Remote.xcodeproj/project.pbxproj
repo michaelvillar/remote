@@ -8,8 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		4C3902CB1BC3891B0005FF42 /* CircleButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C3902CA1BC3891B0005FF42 /* CircleButton.swift */; };
-		4C3962CA1D051ADB00B31ABC /* LIFXHTTPKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4C3962C91D051ADB00B31ABC /* LIFXHTTPKit.framework */; };
-		4C3962CC1D051B5D00B31ABC /* LIFXHTTPKit.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 4C3962C91D051ADB00B31ABC /* LIFXHTTPKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		4C3962CE1D05200E00B31ABC /* MVKeys.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C3962CD1D05200E00B31ABC /* MVKeys.swift */; };
 		4C3B7B0C1BC8E9AD0073BFD1 /* IRCommand.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CE8A90F1B6748EE005E7566 /* IRCommand.swift */; };
 		4C3B7B0D1BC8E9AF0073BFD1 /* IRSender.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CE8A90C1B672FE3005E7566 /* IRSender.swift */; };
@@ -19,6 +17,7 @@
 		4C3B7B131BC8EC9D0073BFD1 /* MVConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C3B7B111BC8EC2B0073BFD1 /* MVConstants.swift */; };
 		4C6BD3161CA27310000C0FAF /* CircleButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C6BD3151CA27310000C0FAF /* CircleButton.swift */; };
 		4C6BD3171CA27406000C0FAF /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4CF58D8D1B6466DA004D3E5E /* Images.xcassets */; };
+		4C994E2D1D0533FF008FDD6E /* LIFXHTTPKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4C994E2C1D0533FF008FDD6E /* LIFXHTTPKit.framework */; };
 		4CBD48011BC7790D00EEB831 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CBD48001BC7790D00EEB831 /* AppDelegate.swift */; };
 		4CBD48031BC7790D00EEB831 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CBD48021BC7790D00EEB831 /* ViewController.swift */; };
 		4CBD48051BC7790D00EEB831 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4CBD48041BC7790D00EEB831 /* Assets.xcassets */; };
@@ -45,16 +44,6 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
-		4C3962CB1D051B5800B31ABC /* CopyFiles */ = {
-			isa = PBXCopyFilesBuildPhase;
-			buildActionMask = 2147483647;
-			dstPath = "";
-			dstSubfolderSpec = 10;
-			files = (
-				4C3962CC1D051B5D00B31ABC /* LIFXHTTPKit.framework in CopyFiles */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		4CBD48251BC7791F00EEB831 /* Embed App Extensions */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
@@ -70,11 +59,11 @@
 
 /* Begin PBXFileReference section */
 		4C3902CA1BC3891B0005FF42 /* CircleButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CircleButton.swift; sourceTree = "<group>"; };
-		4C3962C91D051ADB00B31ABC /* LIFXHTTPKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = LIFXHTTPKit.framework; sourceTree = "<group>"; };
 		4C3962CD1D05200E00B31ABC /* MVKeys.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MVKeys.swift; sourceTree = "<group>"; };
 		4C3B7B0E1BC8E9E40073BFD1 /* MVCommands.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MVCommands.swift; path = Remote/MVCommands.swift; sourceTree = "<group>"; };
 		4C3B7B111BC8EC2B0073BFD1 /* MVConstants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MVConstants.swift; sourceTree = "<group>"; };
 		4C6BD3151CA27310000C0FAF /* CircleButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CircleButton.swift; sourceTree = "<group>"; };
+		4C994E2C1D0533FF008FDD6E /* LIFXHTTPKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = LIFXHTTPKit.framework; path = Carthage/Build/iOS/LIFXHTTPKit.framework; sourceTree = "<group>"; };
 		4CBD47BA1BC76AF700EEB831 /* NotificationCenter.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = NotificationCenter.framework; path = System/Library/Frameworks/NotificationCenter.framework; sourceTree = SDKROOT; };
 		4CBD47FE1BC7790D00EEB831 /* RemoteOSX.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RemoteOSX.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4CBD48001BC7790D00EEB831 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -117,7 +106,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4C3962CA1D051ADB00B31ABC /* LIFXHTTPKit.framework in Frameworks */,
+				4C994E2D1D0533FF008FDD6E /* LIFXHTTPKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -139,7 +128,7 @@
 		4CBD47B91BC76AF700EEB831 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				4C3962C91D051ADB00B31ABC /* LIFXHTTPKit.framework */,
+				4C994E2C1D0533FF008FDD6E /* LIFXHTTPKit.framework */,
 				4CBD47BA1BC76AF700EEB831 /* NotificationCenter.framework */,
 			);
 			name = Frameworks;
@@ -277,7 +266,7 @@
 				4CF58D7E1B6466DA004D3E5E /* Frameworks */,
 				4CF58D7F1B6466DA004D3E5E /* Resources */,
 				4CF58DD91B646857004D3E5E /* Headers */,
-				4C3962CB1D051B5800B31ABC /* CopyFiles */,
+				4C3962D51D0531DE00B31ABC /* Run Script */,
 			);
 			buildRules = (
 			);
@@ -359,6 +348,24 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		4C3962D51D0531DE00B31ABC /* Run Script */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"$(SRCROOT)/Carthage/Build/iOS/LIFXHTTPKit.framework",
+			);
+			name = "Run Script";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "/usr/local/bin/carthage copy-frameworks";
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		4CBD47FA1BC7790D00EEB831 /* Sources */ = {
@@ -589,6 +596,7 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
 				);
 				INFOPLIST_FILE = Remote/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -610,6 +618,7 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
 				);
 				INFOPLIST_FILE = Remote/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
