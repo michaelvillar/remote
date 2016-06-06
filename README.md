@@ -16,3 +16,4 @@ On Mac (notification center):
   - wifi model: http://www.amazon.com/Global-Cache-WF2IR-iTach-Wi-Fi/dp/B0051BU418
 - Change the IP of your iTach in `MVConstants.swift`
 - Change the IR commands in `MVCommands.swift`
+- Change your Lifx key in `MVKeys.swift`
