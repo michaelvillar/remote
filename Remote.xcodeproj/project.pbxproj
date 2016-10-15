@@ -289,6 +289,7 @@
 					4CF58D801B6466DA004D3E5E = {
 						CreatedOnToolsVersion = 6.4;
 						DevelopmentTeam = H9MWYLG8FW;
+						LastSwiftMigration = 0800;
 					};
 				};
 			};
@@ -572,6 +573,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 2.3;
 			};
 			name = Debug;
 		};
@@ -588,6 +590,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "com.michaelvillar.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
+				SWIFT_VERSION = 2.3;
 			};
 			name = Release;
 		};

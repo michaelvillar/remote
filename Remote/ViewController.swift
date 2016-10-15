@@ -62,7 +62,7 @@ class ViewController: UIViewController, UIGestureRecognizerDelegate, IRSenderDel
       color: self.colorsForKeys["power_on"],
       image: UIImage(named: "power_on")
     )
-    power_on.addTarget(self, action: "handleButton:", forControlEvents: UIControlEvents.TouchUpInside);
+    power_on.addTarget(self, action: #selector(ViewController.handleButton(_:)), forControlEvents: UIControlEvents.TouchUpInside);
     self.view.addSubview(power_on)
     
     let power_off = CircleButton(
@@ -71,7 +71,7 @@ class ViewController: UIViewController, UIGestureRecognizerDelegate, IRSenderDel
       color: self.colorsForKeys["power_off"],
       image: UIImage(named: "power_off")
     )
-    power_off.addTarget(self, action: "handleButton:", forControlEvents: UIControlEvents.TouchUpInside);
+    power_off.addTarget(self, action: #selector(ViewController.handleButton(_:)), forControlEvents: UIControlEvents.TouchUpInside);
     self.view.addSubview(power_off)
     
     let input_apple = CircleButton(
@@ -80,7 +80,7 @@ class ViewController: UIViewController, UIGestureRecognizerDelegate, IRSenderDel
       color: self.colorsForKeys["input_apple"],
       image: UIImage(named: "input_apple")
     )
-    input_apple.addTarget(self, action: "handleButton:", forControlEvents: UIControlEvents.TouchUpInside);
+    input_apple.addTarget(self, action: #selector(ViewController.handleButton(_:)), forControlEvents: UIControlEvents.TouchUpInside);
     self.view.addSubview(input_apple)
     
     let input_wii = CircleButton(
@@ -89,7 +89,7 @@ class ViewController: UIViewController, UIGestureRecognizerDelegate, IRSenderDel
       color: self.colorsForKeys["input_wii"],
       image: UIImage(named: "input_wii")
     )
-    input_wii.addTarget(self, action: "handleButton:", forControlEvents: UIControlEvents.TouchUpInside);
+    input_wii.addTarget(self, action: #selector(ViewController.handleButton(_:)), forControlEvents: UIControlEvents.TouchUpInside);
     self.view.addSubview(input_wii)
     
     let volume_down = CircleButton(
@@ -98,7 +98,7 @@ class ViewController: UIViewController, UIGestureRecognizerDelegate, IRSenderDel
       color: self.colorsForKeys["volume_down"],
       image: UIImage(named: "volume_down")
     )
-    volume_down.addTarget(self, action: "handleButton:", forControlEvents: UIControlEvents.TouchUpInside);
+    volume_down.addTarget(self, action: #selector(ViewController.handleButton(_:)), forControlEvents: UIControlEvents.TouchUpInside);
     self.view.addSubview(volume_down)
     
     let volume_up = CircleButton(
@@ -107,7 +107,7 @@ class ViewController: UIViewController, UIGestureRecognizerDelegate, IRSenderDel
       color: self.colorsForKeys["volume_up"],
       image: UIImage(named: "volume_up")
     )
-    volume_up.addTarget(self, action: "handleButton:", forControlEvents: UIControlEvents.TouchUpInside);
+    volume_up.addTarget(self, action: #selector(ViewController.handleButton(_:)), forControlEvents: UIControlEvents.TouchUpInside);
     self.view.addSubview(volume_up)
   }
   
